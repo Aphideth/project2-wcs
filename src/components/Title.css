@@ -1,0 +1,4 @@
+.title{
+  border: solid red 1px;
+  color: var(--red-color);
+}

@@ -1,0 +1,13 @@
+nav{
+  border: solid green 1px;
+  color: green;
+  display: flex;
+}
+
+ul{
+  display: flex;
+}
+
+li{
+  margin: 20px;
+}
