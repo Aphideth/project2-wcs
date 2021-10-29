@@ -3,15 +3,15 @@ import './Article.css';
 import Input from './Input';
 import Title from './Title';
 
-const Article = () => {
+const Article = (props) => {
   return (
     <div className="article">
       Article ici
       <h1>
-        <Title />
+        <Title titleName={props.titleName} />
       </h1>
       <div className="art">
-        <p>Ici le texte</p>
+        <p>{props.text}</p>
         <Input />
       </div>
     </div>

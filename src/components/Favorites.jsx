@@ -7,7 +7,7 @@ const Favorites = () => {
   return (
     <div className="Favorites">
       <p>Je suis la Favorites page</p>
-      <Title />
+      <Title titleName="Mes Favoris"/>
       <div className="fav">
         <Movie />
         <Movie />

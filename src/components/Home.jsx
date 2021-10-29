@@ -7,10 +7,10 @@ const Home = () => {
   return (
     <div className="home">
       <p>Je suis la Home page</p>
-      <Carrousel />
-      <Carrousel />
-      <Carrousel />
-      <Article />
+      <Carrousel titleName="Carousel des nouveautés"/>
+      <Carrousel titleName="Carousel des films"/>
+      <Carrousel titleName="Carousel des séries"/>
+      <Article titleName="Titre de l'article" text="blablabla le texte" />
     </div>
   );
 };
