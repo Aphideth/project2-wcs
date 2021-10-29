@@ -1,9 +1,6 @@
-.article{
- border: solid blue 1px;
-}
-
 .art{
   display: flex;
   background-color: --(beige);
   color: black;
 }
+
