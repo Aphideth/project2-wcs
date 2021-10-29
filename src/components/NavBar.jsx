@@ -8,12 +8,12 @@ import {
   faTv,
   faHeart,
   faUsers,
-  faSearch,
 } from '@fortawesome/free-solid-svg-icons';
 import './NavBar.css';
+import logotest from '../assets/img/logotest.png';
 import SearchBar from './SearchBar';
 
-library.add(faHome, faFilm, faTv, faHeart, faUsers, faSearch);
+library.add(faHome, faFilm, faTv, faHeart, faUsers);
 
 const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -24,13 +24,13 @@ const NavBar = () => {
         className={isActive ? 'navBar dark-mode show-nav' : 'navBar dark-mode'}
       >
         <div className="navBar-logo">
-          <p>Logo</p>
+          <img src={logotest} alt="logo du site" />
         </div>
         <ul className="navBar-links">
           <li className="navBar-link">
             <Link to="/">
               <FontAwesomeIcon className="icon-menu" icon="home" />
-              <span className="string-menu">Accueil</span>
+              <span className="string-menu string-menu-accueil">Accueil</span>
             </Link>
           </li>
           <li className="navBar-link">

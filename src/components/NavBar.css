@@ -1,15 +1,16 @@
-/*light & dark modes*/
+/* light & dark modes */
 
 .light-mode {
   --navBar-color: #164059;
-  --navBar-bg-color: #F2D3AC;
+  --navBar-bg-color: #f2d3ac;
 }
+
 .dark-mode {
-  --navBar-color: #F2D3AC;
+  --navBar-color: #f2d3ac;
   --navBar-bg-color: #164059;
 }
 
-/*navBar*/
+/* navBar */
 
 .navBar {
   display: flex;
@@ -20,12 +21,13 @@
   color: var(--navBar-color);
   background: var(--navBar-bg-color);
 }
+
 .navBar-links {
   display: flex;
   position: absolute;
   flex-direction: column;
   width: 0;
-  height:calc(100vh - 5em);
+  height: calc(100vh - 5em);
   padding: 0;
   top: 5em;
   left: 0;
@@ -33,14 +35,17 @@
   list-style: none;
   transition: all 0.8s ease-in-out;
 }
+
 .show-nav .navBar-links {
   display: flex;
   width: 100%;
   position: absolute;
 }
+
 .navBar-link {
   padding: 0 0.625em;
 }
+
 .navBar-link a {
   display: block;
   opacity: 0;
@@ -48,23 +53,32 @@
   font-size: 1.6rem;
   text-decoration: none;
   color: var(--navBar-color);
-  transition-duration:  0.7s;
+  transition-duration: 0.7s;
   transition-timing-function: ease-in-out;
   transition-delay: 0.3s;
 }
+
 .show-nav .navBar-link a {
   opacity: 1;
 }
+
 .navBar-link a:hover {
   padding-left: 2rem;
   letter-spacing: 0.313em;
 }
 
-/*Toggle menu*/
+.navBar-logo img {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  width: 100px;
+}
+
+/* Toggle menu */
 
 .menuBurger {
   display: block;
-  position : relative;
+  position: relative;
   padding: 0;
   width: 2.813em;
   height: 2.813em;
@@ -72,6 +86,7 @@
   background: transparent;
   cursor: pointer;
 }
+
 .bar {
   display: block;
   width: 2.813em;
@@ -80,12 +95,15 @@
   border-radius: 3px;
   transition: all 0.5s ease-in-out;
 }
+
 .show-nav .bar {
   width: 0;
   background: transparent;
 }
-.bar::before, .bar::after {
-  content:"";
+
+.bar::before,
+.bar::after {
+  content: "";
   width: 2.813em;
   height: 0.25em;
   position: absolute;
@@ -94,79 +112,110 @@
   border-radius: 3px;
   transition: all 0.5s ease-in-out;
 }
+
 .bar::before {
   transform: translateY(-0.75em);
 }
+
 .show-nav .bar::before {
   transform: rotate(45deg);
 }
+
 .bar::after {
   transform: translateY(0.75em);
 }
+
 .show-nav .bar::after {
   transform: rotate(-45deg);
 }
+
 .icon-menu {
   display: none;
 }
 
-/*Medium devices*/
+.navSearchBar {
+  display: flex;
+  width: 100px;
+  align-content: center;
+  justify-content: center;
+}
 
-@media screen and (min-width:426px) {
+/* Medium devices */
+
+@media screen and (min-width: 426px) {
   .navBar-links {
-      display: flex;
-      position: inherit;
-      flex-direction: row;
-      width: auto;
-      height: auto;
+    display: flex;
+    position: inherit;
+    flex-direction: row;
+    width: auto;
+    height: auto;
   }
+
   .navBar-link {
-      padding: 0;
+    padding: 0;
   }
+
   .navBar-link a {
-      font-size: inherit;
-      opacity: inherit;
-      transition: none;
+    padding: 1rem;
+    font-size: inherit;
+    opacity: inherit;
+    transition: none;
   }
+
   .navBar-link a:hover {
-      padding: 1rem;
-      letter-spacing: inherit;
+    padding: 1rem;
+    letter-spacing: inherit;
   }
+
   .navBar-link > a::after {
-      display: block;
-      content: "";
-      width: 0;
-      height: 1px;
-      background: var(--navBar-color);
-      transition: width 0.4s;
+    display: block;
+    content: "";
+    width: 0;
+    height: 1px;
+    background: var(--navBar-color);
+    transition: width 0.4s;
   }
+
   .navBar-link:hover > a::after {
-      width: 100%;
+    width: 100%;
   }
+
   .menuBurger {
-      display: none;
+    display: none;
   }
+
   .icon-menu {
     display: initial;
     font-size: 1.4rem;
     margin: 0.5rem;
   }
+
   .string-menu {
-      display: none;
+    display: none;
   }
 }
 
-/*Large devices*/
+/* Large devices */
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width: 769px) {
   .string-menu {
     display: initial;
   }
+
   .icon-menu {
     padding-right: 0.5em;
     margin: 0;
   }
+
   .navBar-link a {
-      font-size: 1.4rem;
+    font-size: 1.4rem;
+  }
+
+  .navSearchBar {
+    width: 115px;
+  }
+
+  .navBar-logo img {
+    width: 115px;
   }
 }
