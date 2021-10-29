@@ -2,11 +2,11 @@ import React from 'react';
 import './Carrousel.css';
 import Title from './Title';
 
-const Carrousel = () => {
+const Carrousel = (props) => {
   return (
     <div className="carrousel">
       <h1>
-        <Title />
+        <Title titleName={props.titleName}/>
       </h1>
       <p>Ceci est le carousel</p>
     </div>

@@ -1,12 +1,16 @@
 import React from 'react';
 import './Title.css';
+//import PropTypes from 'prop-types';
 
-const Title = () => {
+const Title = (props/* { titleName } */) => {
   return (
     <div className="title">
-      <h1>Ceci est le Title</h1>
+      <h2>{props.titleName}</h2>
     </div>
   );
 };
+/*Title.propTypes = {
+  titleName: PropTypes.string.isRequired,
+};*/
 
 export default Title;
