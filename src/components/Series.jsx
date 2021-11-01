@@ -7,7 +7,6 @@ import './Series.css';
 const Series = () => {
   return (
     <div className="Series">
-      <p>Je suis la Series page</p>
       <Serie />
       <Article />
       <Carrousel />

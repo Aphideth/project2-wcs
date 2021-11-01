@@ -1,6 +1,14 @@
 .art{
   display: flex;
+  justify-content:space-evenly ;
+  align-items: center ;
   background-color: --(beige);
   color: black;
+}
+
+.article{
+  background-color: white;
+  padding: 2rem;
+  border: solid;
 }
 

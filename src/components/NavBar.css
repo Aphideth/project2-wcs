@@ -7,7 +7,7 @@
 
 .dark-mode {
   --navBar-color: #f2d3ac;
-  --navBar-bg-color: #164059;
+  --navBar-bg-color: black;
 }
 
 /* navBar */
@@ -15,8 +15,8 @@
 .navBar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 5em;
+  justify-content:flex-start;
+  height: 3em;
   padding: 0.625em;
   color: var(--navBar-color);
   background: var(--navBar-bg-color);

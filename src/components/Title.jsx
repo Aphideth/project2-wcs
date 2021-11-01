@@ -11,6 +11,7 @@ const Title = (props/* { titleName } */) => {
 };
 /*Title.propTypes = {
   titleName: PropTypes.string.isRequired,
-};*/
+};
+Ce qui est commenté est la façon de faire des props validation*/
 
 export default Title;

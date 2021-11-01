@@ -1,18 +1,14 @@
 import React from 'react';
 import './Article.css';
 import Input from './Input';
-import Title from './Title';
 
 const Article = (props) => {
   return (
     <div className="article">
-      Article ici
-      <h1>
-        <Title titleName={props.titleName} />
-      </h1>
+      <h3 id="articleTitle">{props.articleName}</h3>
       <div className="art">
         <p>{props.text}</p>
-        <Input />
+        <Input text_button="En savoir plus"/>
       </div>
     </div>
   );
