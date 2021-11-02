@@ -1,4 +1,3 @@
-import React from 'react';
 import './OurTeam.css';
 import Title from './Title';
 

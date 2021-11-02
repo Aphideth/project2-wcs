@@ -2,15 +2,15 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size:var(--font-size);
+  font-size: var(--font-size);
   font-family: 'Raleway', 'Montserrat', sans-serif;
 }
 
 :root {
   --font-size: 1rem;
-  --red-color: #BF0404;
-  --lightblue-color: #4BC3F2;
+  --red-color: #bf0404;
+  --lightblue-color: #4bc3f2;
   --blue-color: #164059;
-  --lightbeige-color: #F2D3AC;
-  --beige-color: #BF9663;
+  --lightbeige-color: #f2d3ac;
+  --beige-color: #bf9663;
 }
