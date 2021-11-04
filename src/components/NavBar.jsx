@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { NavLink as Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -15,7 +16,7 @@ import SearchBar from './SearchBar';
 
 library.add(faHome, faFilm, faTv, faHeart, faUsers);
 
-const NavBar = () => {
+const NavBar = ({ items }) => {
   const [isActive, setIsActive] = useState(false);
   const toggleClass = () => setIsActive(!isActive);
   return (
@@ -62,11 +63,19 @@ const NavBar = () => {
           <span className="bar" />
         </button>
         <div className="navSearchBar">
-          <SearchBar />
+          <SearchBar items={items} />
         </div>
       </nav>
     </div>
   );
+};
+
+NavBar.propTypes = {
+  items: PropTypes.string,
+};
+
+NavBar.defaultProps = {
+  items: '',
 };
 
 export default NavBar;

@@ -1,5 +1,6 @@
 .search-menu {
   display: none;
+  width: 0;
 }
 
 .search-menu-show {

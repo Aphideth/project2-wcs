@@ -193,6 +193,10 @@
   .string-menu {
     display: none;
   }
+
+  .navBar-logo img {
+    width: 200px;
+  }
 }
 
 /* Large devices */
@@ -215,7 +219,20 @@
     width: 115px;
   }
 
+}
+
+@media screen and (min-width: 1024px) {
   .navBar-logo img {
-    width: 115px;
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .navBar-logo img {
+    width: 250px;
+  }
+
+  .navBar-link a {
+    padding: 1rem, 1.4rem;
   }
 }
