@@ -6,6 +6,7 @@ import Movies from './components/Movies';
 import Series from './components/Series';
 import Favorites from './components/Favorites';
 import OurTeam from './components/OurTeam';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           </Switch>
         </main>
       </div>
+      <Footer />
     </Router>
   );
 };

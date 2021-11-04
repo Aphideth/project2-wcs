@@ -1,0 +1,11 @@
+body {
+ background-color: var(--beige-color);
+}
+.home-movies-popularity {
+  width: fit-content;
+  text-align: center;
+  padding-top: 1rem;
+  border-radius: 20px;
+  color: var(--blue-color);
+  background-color: var(--lightbeige-color);
+}
