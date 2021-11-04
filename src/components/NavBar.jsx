@@ -10,7 +10,7 @@ import {
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 import './NavBar.css';
-import logotest from '../assets/img/logotest.png';
+import WIA1 from '../assets/img/WIA1.png';
 import SearchBar from './SearchBar';
 
 library.add(faHome, faFilm, faTv, faHeart, faUsers);
@@ -24,7 +24,7 @@ const NavBar = () => {
         className={isActive ? 'navBar dark-mode show-nav' : 'navBar dark-mode'}
       >
         <div className="navBar-logo">
-          <img src={logotest} alt="logo du site" />
+          <img src={WIA1} alt="logo du site" />
         </div>
         <ul className="navBar-links">
           <li className="navBar-link">

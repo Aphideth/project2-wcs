@@ -4,6 +4,7 @@ body {
   box-sizing: border-box;
   font-size: var(--font-size);
   font-family: 'Raleway', 'Montserrat', sans-serif;
+  background-color: #f2d3ac;
 }
 
 :root {
@@ -13,4 +14,5 @@ body {
   --blue-color: #164059;
   --lightbeige-color: #f2d3ac;
   --beige-color: #bf9663;
+  --grey-color: #b4bcc5;
 }

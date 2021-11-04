@@ -4,7 +4,6 @@ import './OurMember.css';
 const OurMember = () => {
   return (
     <div>
-      <p>Je suis la OurMember page</p>
       <p>Je suis l`avatar du membre selectionné</p>
       <p>Je suis le nom du membre selectionné</p>
       <p>Je suis la description du membre selectionné</p>
