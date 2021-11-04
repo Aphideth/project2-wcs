@@ -1,9 +1,15 @@
 .curtain {
-position: fixed;
-z-index: 5;
-top: 0%;
-right: 0%;
-height: 100vh;
-margin: 0;
-border: 0;
+  position: fixed;
+  z-index: 5;
+  top: 0%;
+  right: 0%;
+  height: 100vh;
+  margin: 0;
+  border: 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .curtain {
+    display: none;
+  }
 }
