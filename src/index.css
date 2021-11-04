@@ -4,7 +4,9 @@ body {
   box-sizing: border-box;
   font-size: var(--font-size);
   font-family: 'Raleway', 'Montserrat', sans-serif;
-  background-color: #f2d3ac;
+  background-image: url('./assets/img/spotlight.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 :root {
