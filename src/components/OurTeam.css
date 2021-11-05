@@ -1,0 +1,53 @@
+.profil {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.imgAvatar {
+  width: 10em;
+}
+
+/* movies podium */
+.movies-podium {
+  text-align: center;
+}
+
+.first-movie img,
+.second-third-movies img {
+  width: 30vw;
+}
+
+.first-movie {
+  margin: auto;
+}
+
+.second-third-movies {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* series podium */
+.series-podium {
+  text-align: center;
+}
+
+.first-series img,
+.second-third-series img {
+  width: 30vw;
+}
+
+.first-series {
+  margin: auto;
+}
+
+.second-third-series {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* social links */
+.social-links {
+  display: flex;
+  justify-content: space-evenly;
+}
