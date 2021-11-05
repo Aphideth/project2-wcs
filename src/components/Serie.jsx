@@ -1,6 +1,8 @@
 import './Serie.css';
+import React from 'react';
 import Title from './Title';
 import Carrousel from './Carrousel';
+
 
 const Serie = () => {
 
