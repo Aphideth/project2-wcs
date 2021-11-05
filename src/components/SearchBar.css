@@ -1,4 +1,37 @@
-.searchbar{
-  border: solid brown 1px;
-  color: brown;
+.search-menu {
+  display: none;
+}
+
+.search-menu-show {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 6%;
+  padding: 0.5rem;
+  top: 5.2em;
+  left: 0;
+  font-size: 1.2rem;
+  color: var(--navBar-color);
+  background: var(--navBar-bg-color);
+  opacity: 0.8;
+}
+
+.search-icon {
+  font-size: 1.6rem;
+}
+
+/* Medium devices */
+
+@media screen and (min-width: 426px) {
+  .search-icon {
+    font-size: 1.4rem;
+  }
+}
+
+/* Large devices */
+
+@media screen and (min-width: 769px) {
+  .search-icon {
+    font-size: 1.8rem;
+  }
 }
