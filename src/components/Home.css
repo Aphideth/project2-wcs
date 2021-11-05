@@ -22,6 +22,11 @@ body {
   margin: 1rem;
 }
 
+.link {
+  text-decoration: none;
+  color: #164059;
+}
+
 .m_overview {
   padding: 0.5rem;
 }
