@@ -1,5 +1,7 @@
 import React from 'react';
 import './Favorites.css';
+import Title from './Title';
+import Movie from './Movie';
 
 const Favorites = () => {
   return (

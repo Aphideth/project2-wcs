@@ -1,3 +1,4 @@
+import React from 'react';
 import './Serie.css';
 import Title from './Title';
 import Carrousel from './Carrousel';

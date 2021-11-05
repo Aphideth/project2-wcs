@@ -15,7 +15,7 @@
 .navBar {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   height: 3em;
   padding: 0.625em;
   color: var(--navBar-color);
@@ -29,7 +29,7 @@
   width: 0;
   height: calc(100vh - 5em);
   padding: 0;
-  top: 5em;
+  top: 3.2em;
   left: 0;
   background: var(--navBar-bg-color);
   list-style: none;
@@ -50,7 +50,7 @@
   display: block;
   opacity: 0;
   padding: 1rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-decoration: none;
   color: var(--navBar-color);
   transition-duration: 0.7s;
@@ -156,14 +156,15 @@
   }
 
   .navBar-link a {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     font-size: inherit;
     opacity: inherit;
     transition: none;
   }
 
   .navBar-link a:hover {
-    padding: 1rem;
+    padding-left: 0;
+    padding: 0.5rem;
     letter-spacing: inherit;
   }
 
@@ -202,6 +203,10 @@
 /* Large devices */
 
 @media screen and (min-width: 769px) {
+  .navBar {
+    justify-content: space-between;
+  }
+
   .string-menu {
     display: initial;
   }
@@ -213,6 +218,7 @@
 
   .navBar-link a {
     font-size: 1.4rem;
+    padding: 0.5rem;
   }
 
   .navSearchBar {
@@ -221,18 +227,40 @@
 
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
+  .navBar {
+    justify-content: flex-start;
+    padding: 0.8em 1.5em;
+  }
+
   .navBar-logo img {
     width: 150px;
   }
 }
 
 @media screen and (min-width: 1440px) {
+  .navBar {
+    padding: 0.8em 2em;
+  }
+
+  .navSearchBar {
+    padding-left: 2.5em;
+  }
+
   .navBar-logo img {
     width: 250px;
   }
 
   .navBar-link a {
     padding: 1rem, 1.4rem;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .navBar {
+    justify-content: space-around;
+  }
+  .navSearchBar {
+    padding-right: 6.5em;
   }
 }
