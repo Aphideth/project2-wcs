@@ -1,3 +1,4 @@
+import React from 'react';
 import './Serie.css';
 import React from 'react';
 import Title from './Title';

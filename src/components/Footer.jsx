@@ -4,16 +4,16 @@ import Modal from "react-modal";
 import "./Footer.css";
 
 Modal.setAppElement("#root");
-function App() {
+function Footer() {
   const [openModal, setOpenModal] = useState(false);
   const [openModalContact, setOpenModalContact] = useState(false);
 
   return (
-    <div className="App">
-      <div className="container">
+    <div className="footer dark-mode">
+      <div>
         {/* first modal */}
-        <button onClick={() => setOpenModal(true)}>Sources</button>
-        <Modal
+        <button className="sources" onClick={() => setOpenModal(true)}>Sources</button>
+        <Modal 
           isOpen={openModal}
           shouldCloseOnOverlayClick={true}
           onRequestClose={() => setOpenModal(false)}
@@ -31,15 +31,17 @@ function App() {
             <button onClick={() => setOpenModal(false)}>X</button>
           </div>
         </Modal>
-        {/* team link */}
-        {/* <Link to="/OurTeam">
+      </div>
+      {/* team link */}
+      {/* <Link to="/OurTeam">
           <button type="button">
           Notre équipe
           </button>
         </Link> */}
-        {/* <button type="button" className="equipe"><Link to="/OurTeam">Notre équipe</Link></button> */}
-        {/* second modal */}
-        <button onClick={() => setOpenModalContact(true)}>Contact</button>
+      {/* <button type="button" className="equipe"><Link to="/OurTeam">Notre équipe</Link></button> */}
+      {/* second modal */}
+      <div>
+        <button className="contact" onClick={() => setOpenModalContact(true)}>Contact</button>
         <Modal
           isOpen={openModalContact}
           shouldCloseOnOverlayClick={true}
@@ -71,4 +73,4 @@ function App() {
   );
 }
 
-export default App;
+export default Footer;

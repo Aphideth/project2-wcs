@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 const Home = ({ items }) => {
   return (
     <div className="home">
-      {//      <Carrousel titleName="Les dernières nouveautés"/>
-        //      <Carrousel titleName="Films du moment"/>
-        //      <Carrousel titleName="Séries du moment"/>
-        //      <Article 
-        //        articleName="Ajoutez vos films et séries préférées dans vos favoris!" 
-        //        text="bla bla bla le texte"}
-      }
+      {/* <Carrousel titleName="Les dernières nouveautés"/>
+      <Carrousel titleName="Films du moment"/>
+      <Carrousel titleName="Séries du moment"/>
+      <Article 
+        articleName="Ajoutez vos films et séries préférées dans vos favoris!" 
+        text="bla bla bla le texte" 
+      />   */}
     
       {items.map((movie) => (
         <div className="home-movies-popularity" key={movie.id}>
