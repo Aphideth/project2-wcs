@@ -1,75 +1,74 @@
-import React, { useState } from 'react';
-// import OurTeam  from './OurTeam';
-import { Link } from 'react-router-dom';
-import './Footer.css';
+import React, { useState } from "react";
+import Modal from "react-modal";
+//import Link from 'react-router-dom';
+import "./Footer.css";
 
-const Footer = () => {
-  const [isSrcActive, setIsSrcActive] = useState(false);
-  const toggleClass = () => setIsSrcActive(!isSrcActive);
-  const [isContactActive, setIsContactActive] = useState(false);
-  const toggleClassContact = () => setIsContactActive(!isContactActive);
-
-  // const handleSubmit = () => {
-  //   alert('Message envoyé')
-  // }
+Modal.setAppElement("#root");
+function App() {
+  const [openModal, setOpenModal] = useState(false);
+  const [openModalContact, setOpenModalContact] = useState(false);
 
   return (
-    <div className="footer dark-mode">
-      <ul className="footer-nav">
-        <li className="footer-link">
-          <button type="button" className="sources" onClick={toggleClass}>
-            <span className="">Nos sources</span>
+    <div className="App">
+      <div className="container">
+        {/* first modal */}
+        <button onClick={() => setOpenModal(true)}>Sources</button>
+        <Modal
+          isOpen={openModal}
+          shouldCloseOnOverlayClick={true}
+          onRequestClose={() => setOpenModal(false)}
+          style={{
+            overlay: {
+              backgroundColor: "grey",
+            },
+          }}
+        >
+          <h2>Sources</h2>
+          <p>www.themoviedb.org/</p>
+          <p>www.omdbapi.com/</p>
+          <p>www.betaseries.com/api/</p>
+          <div>
+            <button onClick={() => setOpenModal(false)}>X</button>
+          </div>
+        </Modal>
+        {/* team link */}
+        {/* <Link to="/OurTeam">
+          <button type="button">
+          Notre équipe
           </button>
-        </li>
-        <li className="footer-link">
-          <button type="button" className="equipe">
-            <Link to="/OurTeam">Notre Equipe</Link>
-          </button>
-        </li>
-        <li className="footer-link">
-          <button
-            type="button"
-            className="contact"
-            onClick={toggleClassContact}
-          >
-            <span className="">Contact</span>
-          </button>
-        </li>
-      </ul>
-      <div
-        className={
-          isSrcActive
-            ? 'footer-sources-links show-links'
-            : 'footer-sources-links'
-        }
-      >
-        <ul className="sources-links">
-          <li className="sources-link">https://www.themoviedb.org/</li>
-          <li className="sources-link">https://www.betaseries.com/api/</li>
-          <li className="sources-link">http://www.omdbapi.com/</li>
-        </ul>
+        </Link> */}
+        {/* <button type="button" className="equipe"><Link to="/OurTeam">Notre équipe</Link></button> */}
+        {/* second modal */}
+        <button onClick={() => setOpenModalContact(true)}>Contact</button>
+        <Modal
+          isOpen={openModalContact}
+          shouldCloseOnOverlayClick={true}
+          onRequestClose={() => setOpenModalContact(false)}
+          style={{
+            overlay: {
+              backgroundColor: "grey",
+            },
+          }}
+        >
+          <h2>Contact</h2>
+          <div className = "form-box">
+            <form>
+              <div>
+                <label> Votre message </label>
+                <input type="text" required="required" placeholder="Nom"/>        
+                <input type="email" required="required" placeholder="E-mail"/>
+                <textarea type="text" required="required" placeholder="Message"/>
+              </div>
+              <button type = "submit" id= "submitBtn" className = "submitBtn">Envoyer</button>
+            </form>
+          </div>
+          <div>
+            <button onClick={() => setOpenModalContact(false)}>X</button>
+          </div>
+        </Modal>
       </div>
-      {/* <div className={isContactActive ? "form-box-show": "form-box"} >
-        <div className='contacts-form-toggle'>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="name">Name:</label>
-              <input type="text" id="name" required />
-            </div>
-            <div>
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email" required />
-            </div>
-            <div>
-              <label htmlFor="message">Message:</label>
-              <textarea id="message" required />
-            </div>
-            <button type="submit" className='btn-submit'>Envoyer</button>
-          </form>
-        </div>
-      </div> */}
     </div>
   );
-};
+}
 
-export default Footer;
+export default App;
