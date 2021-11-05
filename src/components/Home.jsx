@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 const Home = ({ items }) => {
   return (
@@ -14,13 +15,13 @@ const Home = ({ items }) => {
     
       {items.map((movie) => (
         <div className="home-movies-popularity" key={movie.id}>
-          <h1>{movie.title}</h1>
+          <h1><Link to="/Movies" className="link">{movie.title}</Link></h1>
           <h2>{movie.release_date}</h2>
-          <img
+          <Link to="/Movies"><img
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             alt={movie.title}
-          />
-          <p>{movie.overview}</p>
+          /></Link>
+          <p className="m_overview">{movie.overview}</p>
         </div>
       ))}
     </div>
