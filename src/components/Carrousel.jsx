@@ -1,4 +1,5 @@
 import './Carrousel.css';
+import Title from './Title';
 
 const Carrousel = (props) => {
   return (

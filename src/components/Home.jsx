@@ -3,14 +3,14 @@ import './Home.css';
 
 const Home = ({ items }) => {
   return (
-/*   <div className="home">
-//      <Carrousel titleName="Les dernières nouveautés"/>
-//      <Carrousel titleName="Films du moment"/>
-//      <Carrousel titleName="Séries du moment"/>
-//      <Article 
-//        articleName="Ajoutez vos films et séries préférées dans vos favoris!" 
-//        text="bla bla bla le texte" 
-    />  */
+    <div className="home">
+      {//      <Carrousel titleName="Les dernières nouveautés"/>
+        //      <Carrousel titleName="Films du moment"/>
+        //      <Carrousel titleName="Séries du moment"/>
+        //      <Article 
+        //        articleName="Ajoutez vos films et séries préférées dans vos favoris!" 
+        //        text="bla bla bla le texte"}
+      }
     
       {items.map((movie) => (
         <div className="home-movies-popularity" key={movie.id}>
@@ -20,7 +20,7 @@ const Home = ({ items }) => {
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             alt={movie.title}
           />
-          <p>{movie.overview}</p>
+          <p className="m_overview">{movie.overview}</p>
         </div>
       ))}
     </div>
