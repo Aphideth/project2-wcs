@@ -1,10 +1,12 @@
 .search-menu {
   display: none;
+  width: 0;
 }
 
 .search-menu-show {
   display: flex;
   position: absolute;
+  text-align: center;
   width: 100%;
   height: 6%;
   padding: 0.5rem;
@@ -13,17 +15,61 @@
   font-size: 1.2rem;
   color: var(--navBar-color);
   background: var(--navBar-bg-color);
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
-.search-icon {
+input:focus {
+  outline: none;
+}
+
+.dataResult {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 12%;
+  padding: 0.5rem;
+  top: 9em;
+  left: 0;
+  font-size: 1.2rem;
+  color: var(--navBar-color);
+  background: var(--navBar-bg-color);
+  opacity: 0.9;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.dataResult::-webkit-scrollbar {
+  display: none;
+}
+
+.dataResult .dataItem {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: var(--navBar-color);
+}
+
+.dataItem p {
+  margin: 0.2rem;
+}
+
+p:hover {
+  color: var(--lightblue-color);
+}
+
+.times-icon {
+  cursor: pointer;
+}
+
+.search-icon, .times-icon {
   font-size: 1.6rem;
 }
 
 /* Medium devices */
 
 @media screen and (min-width: 426px) {
-  .search-icon {
+  .search-icon, .times-icon {
     font-size: 1.4rem;
   }
 }
@@ -31,7 +77,7 @@
 /* Large devices */
 
 @media screen and (min-width: 769px) {
-  .search-icon {
+  .search-icon, .times-icon {
     font-size: 1.8rem;
   }
 }
