@@ -17,11 +17,15 @@
   justify-content: space-around;
   align-items: center;
   height: 3em;
+  width: 100vw;
   color: var(--footer-color);
   background-color: var(--footer-bg-color);
+  bottom: 0;
 }
 
-.sources, .equipe, .contact {
+.sources,
+.equipe,
+.contact {
   border: none;
   color: var(--footer-color);
   background-color: var(--footer-bg-color);
