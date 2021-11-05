@@ -13,7 +13,6 @@ const OurTeam = () => {
   const [openModal2, setOpenModal2] = useState(false);
   const [openModal3, setOpenModal3] = useState(false);
   const [openModal4, setOpenModal4] = useState(false);
-
   const team = [
     {
       name: 'Aphideth',
@@ -72,7 +71,6 @@ const OurTeam = () => {
       linkedin: 'https://www.linkedin.com/in/giovanni-rossi-4b0b98221/',
     },
   ];
-
   return (
     <div>
       <h2>Our team</h2>
