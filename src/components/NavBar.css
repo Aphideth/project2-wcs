@@ -15,8 +15,8 @@
 .navBar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 5em;
+  justify-content: flex-start;
+  height: 3em;
   padding: 0.625em;
   color: var(--navBar-color);
   background: var(--navBar-bg-color);
@@ -50,7 +50,7 @@
   display: block;
   opacity: 0;
   padding: 1rem;
-  font-size: 1.6rem;
+  font-size: 1rem;
   text-decoration: none;
   color: var(--navBar-color);
   transition-duration: 0.7s;

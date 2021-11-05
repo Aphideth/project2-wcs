@@ -7,6 +7,7 @@ import Series from './components/Series';
 import Favorites from './components/Favorites';
 import OurTeam from './components/OurTeam';
 import Footer from './components/Footer';
+import Curtain from './components/Curtain';
 
 const App = () => {
   return (
@@ -15,6 +16,9 @@ const App = () => {
         <header>
           <NavBar />
         </header>
+        <div>
+          <Curtain />
+        </div>
         <main>
           <Switch>
             <Route exact path="/">

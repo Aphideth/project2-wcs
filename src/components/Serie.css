@@ -1,0 +1,51 @@
+.Serie {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.navBar2 {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 3em;
+  width: 60vw;
+  list-style: none;
+  background-color: #164059;
+  color: #f2d3ac;
+}
+
+.showSyno {
+  border: solid;
+  background-color: white;
+  min-height: 20vh;
+  min-width: 60vw;
+  border-radius: 30px;
+  padding: 1rem;
+}
+
+.noSyno {
+  display: none;
+}
+
+.showSaisons,
+.showEpisodes {
+  border: solid;
+  background-color: white;
+  min-width: 100vh;
+  padding: 1rem;
+}
+
+.noSaisons {
+  display: none;
+}
+
+.noEpisodes {
+  display: none;
+}
+
+.noSug {
+  display: none;
+}

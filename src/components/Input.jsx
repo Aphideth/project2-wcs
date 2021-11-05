@@ -1,10 +1,10 @@
 import React from 'react';
 import './Input.css';
 
-const Input = () => {
+const Input = (props) => {
   return (
-    <div>
-      <input type="button" value="En savoir plus" />
+    <div >
+      <input type="button" id="button" value={props.text_button} />
     </div>
   );
 };

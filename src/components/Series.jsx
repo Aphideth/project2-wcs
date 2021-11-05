@@ -1,10 +1,11 @@
 import React from 'react';
+import Serie from './Serie';
 import './Series.css';
 
 const Series = () => {
   return (
     <div className="Series">
-      <p>Je suis la Series page</p>
+      <Serie />
     </div>
   );
 };

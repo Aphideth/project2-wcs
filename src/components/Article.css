@@ -1,0 +1,16 @@
+.article {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  border: solid;
+  width: 75vw;
+  background-color: white;
+}
+
+.art {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: --(beige);
+  color: black;
+}
