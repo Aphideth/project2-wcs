@@ -20,11 +20,11 @@ const Home = ({ items }) => {
 };
 
 Home.propTypes = {
-  items: PropTypes.string,
+  items: PropTypes.instanceOf(Array),
 };
 
 Home.defaultProps = {
-  items: '',
+  items: [],
 };
 
 export default Home;

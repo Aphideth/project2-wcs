@@ -15,7 +15,6 @@ import WIA_2222 from '../assets/img/WIA_2222.png';
 import SearchBar from './SearchBar';
 
 library.add(faHome, faFilm, faTv, faHeart, faUsers);
-
 const NavBar = ({ items }) => {
   const [isActive, setIsActive] = useState(false);
   const toggleClass = () => setIsActive(!isActive);
@@ -71,11 +70,11 @@ const NavBar = ({ items }) => {
 };
 
 NavBar.propTypes = {
-  items: PropTypes.string,
+  items: PropTypes.instanceOf(Array),
 };
 
 NavBar.defaultProps = {
-  items: '',
+  items: [],
 };
 
 export default NavBar;

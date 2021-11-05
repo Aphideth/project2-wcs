@@ -3,28 +3,36 @@ import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './SearchBar.css';
 
-library.add(faSearch);
+library.add(faSearch, faTimes);
 
 const SearchBar = ({ items }) => {
   const [filteredData, setfilteredData] = useState([]);
-  console.log(items);
-  console.log(filteredData);
+  const [wordEntered, setwordEntered] = useState('');
+
   const handleFilter = (e) => {
     const searchValue = e.target.value;
-    const newFilter = items.filter((value) => {
-      return value.title.toLowerCase().includes(searchValue.toLowerCase);
-    });
+    setwordEntered(searchValue);
+
     if (searchValue === '') {
       setfilteredData([]);
     } else {
-      setfilteredData(newFilter);
+      setfilteredData(
+        items.filter((value) =>
+          value.title.toLowerCase().includes(searchValue.toLowerCase())
+        )
+      );
     }
   };
+
   const [isActive, setIsActive] = useState(false);
   const toggleClass = () => setIsActive(!isActive);
+  const clearInput = () => {
+    setfilteredData([]);
+    setwordEntered('');
+  };
 
   return (
     <div className="searchbar">
@@ -33,32 +41,47 @@ const SearchBar = ({ items }) => {
           className={isActive ? 'search-menu-show' : 'search-menu'}
           type="text"
           name="searchBar"
+          value={wordEntered}
           id="searchBar"
           placeholder="Rechercher un titre, un artiste, un réalisateur..."
           onChange={handleFilter}
         />
-        <div className="dataResult">
-          {/* <Link to={`/:${searchValue}`} /> */}
-          {filteredData.filter((value) => {
-            return <div className="dataItem">{value.title}</div>;
-          })}
-        </div>
-        <FontAwesomeIcon
-          className="search-icon"
-          onClick={toggleClass}
-          icon="search"
-        />
+        {filteredData.length !== 0 && (
+          <div className="dataResult">
+            {/* <Link to={`/:${searchValue}`} /> */}
+            {filteredData.slice(0, 15).map((value) => {
+              return (
+                <div className="dataItem" key={value.id}>
+                  <p>{value.title}</p>
+                </div>
+              );
+            })}
+          </div>
+        )}
+        {filteredData.length !== 0 ? (
+          <FontAwesomeIcon
+            className="times-icon"
+            onClick={clearInput}
+            icon="times"
+          />
+        ) : (
+          <FontAwesomeIcon
+            className="search-icon"
+            onClick={toggleClass}
+            icon="search"
+          />
+        )}
       </form>
     </div>
   );
 };
 
 SearchBar.propTypes = {
-  items: PropTypes.string,
+  items: PropTypes.instanceOf(Array),
 };
 
 SearchBar.defaultProps = {
-  items: '',
+  items: [],
 };
 
 export default SearchBar;
