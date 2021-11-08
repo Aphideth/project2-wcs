@@ -23,20 +23,32 @@ const Carrousel = ( {items} ) => {
   }
 
   return (
-    <div className="slider">
+    <div className="carrousel">
       <FontAwesomeIcon className="left-arrow" icon="chevron-left" onClick={prevSlide} />
       <FontAwesomeIcon className="right-arrow" icon="chevron-right" onClick={nextSlide} />
       {items.map((movie, index) => (
         <div className={index === current ? 'slide active' : 'slide'} key={index}>
           {index === current && (
-            <>
-              <Link to="/Movies" className="link"><h1>{movie.title}</h1></Link>
-              <Link to="/Movies"><img
-                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            <div className="slider-container">
+              <div className="slider">
+                <div className="slider-front">
+                  <h1>{movie.title}</h1>
+                  <Link to="/Movies">
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                      alt={movie.title}
+                      className="slider-img"
+                    />
+                  </Link>
+                </div>
+              </div>
+              <img
+                src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
                 alt={movie.title}
-                className="slider-img"
-              /></Link>
-            </>)}
+                className="slider-img-background"
+              />
+            </div>
+          )}
         </div>
       ))}
     </div>

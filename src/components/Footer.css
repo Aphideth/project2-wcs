@@ -76,3 +76,94 @@
   padding: 0;
   margin: 2rem;
 }
+
+/* modal config */
+
+.ReactModal__Overlay, .ReactModal__Overlay--after-open {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  z-index: 10;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  color: var(--blue-color);
+  background-color: var(--lightbeige-color);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.form-box form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-box h2 {
+  text-decoration: underline;
+}
+
+.form-box label {
+  padding: 0.5rem;
+}
+
+.form-box input, .form-box textarea {
+  width: 59vw;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.submitBtn {
+  padding: 0.3rem;
+  margin-top: .5rem;
+  border-radius: 10px;
+  color: var(--lightbeige-color);
+  background-color: var(--blue-color);
+  cursor: pointer;
+}
+
+.closeBtn {
+  position: absolute;
+  font-size: 1.1rem;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-weight: bolder;
+  border-radius: 10px;
+  color: var(--red-color);
+  cursor: pointer;
+}
+
+/* Medium devices */
+
+@media screen and (min-width: 769px) {
+  .sources, .equipe, .contact {
+      font-size: 1.4rem;
+  }
+}
+
+/* Large devices */
+
+@media screen and (min-width: 1441px) {
+  .form-box input, .form-box textarea {
+    width: 45vw;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+  .submitBtn {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+  }
+}
