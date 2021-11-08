@@ -72,8 +72,8 @@ const OurTeam = () => {
     },
   ];
   return (
-    <div>
-      <h2>Our team</h2>
+    <div className="profils">
+      <h2>La Team Plop-Corn !</h2>
       <div className="profil">
         <div className="first-member">
           <div
