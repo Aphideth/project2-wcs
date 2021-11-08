@@ -22,6 +22,13 @@ body {
   margin: 1rem;
 }
 
+.home-movies-popularity img {
+  width: 500px;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px var(--beige-color);
+}
+
+
 .link {
   text-decoration: none;
   color: #164059;

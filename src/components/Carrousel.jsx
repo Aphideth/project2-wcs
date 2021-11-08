@@ -1,15 +1,54 @@
+import React, {useState} from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faChevronRight,
+  faChevronLeft,
+} from '@fortawesome/free-solid-svg-icons';
 import './Carrousel.css';
-import Title from './Title';
+// import Title from './Title';
 
-const Carrousel = (props) => {
+library.add(faChevronRight, faChevronLeft);
+const Carrousel = ( {items} ) => {
+  const [current, setCurrent] = useState(0)
+
+  const nextSlide = () => {
+    setCurrent(current === items.length - 1 ? 0 : current + 1);
+  }
+
+  const prevSlide = () => {
+    setCurrent(current === 0 ? items.length - 1 : current - 1);
+  }
+
   return (
-    <div className="carrousel">
-      <h1>
-        <Title titleName={props.titleName}/>
-      </h1>
-      <p>Ceci est le carousel</p>
+    <div className="slider">
+      <FontAwesomeIcon className="left-arrow" icon="chevron-left" onClick={prevSlide} />
+      <FontAwesomeIcon className="right-arrow" icon="chevron-right" onClick={nextSlide} />
+      {items.map((movie, index) => (
+        <div className={index === current ? 'slide active' : 'slide'} key={index}>
+          {index === current && (
+            <>
+              <Link to="/Movies" className="link"><h1>{movie.title}</h1></Link>
+              <Link to="/Movies"><img
+                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                alt={movie.title}
+                className="slider-img"
+              /></Link>
+            </>)}
+        </div>
+      ))}
     </div>
   );
+};
+
+Carrousel.propTypes = {
+  items: PropTypes.instanceOf(Array),
+};
+
+Carrousel.defaultProps = {
+  items: [],
 };
 
 export default Carrousel;

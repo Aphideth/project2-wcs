@@ -1,3 +1,9 @@
+.profils h2 {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--beige-color);
+}
+
 .profil {
   display: flex;
   justify-content: space-evenly;
@@ -6,6 +12,9 @@
 
 .imgAvatar {
   width: 10em;
+  margin: 1rem 0;
+  border-radius: 50%;
+  border: 3px solid var(--beige-color);
 }
 
 /* movies podium */

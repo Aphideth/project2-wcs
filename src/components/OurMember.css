@@ -1,3 +1,7 @@
-img {
+.member {
+  text-align: center;
+}
+
+.member img {
   width: 250px;
 }

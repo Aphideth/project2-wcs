@@ -17,24 +17,24 @@ const OurMember = ({
   memberLinkedIn,
 }) => {
   return (
-    <div>
+    <div className="member">
       <div>
         <h2>{memberName}</h2>
         <img src={memberAvatar} alt={memberName} />
         <p>{memberPresentation}</p>
       </div>
       <div>
-        <h3>Mon Top 3 films</h3>
+        <h2>Mon Top 3 films</h2>
         <img src={top1film} alt={memberName} />
         <img src={top2film} alt={memberName} />
         <img src={top3film} alt={memberName} />
-        <h3>Mon Top 3 séries</h3>
+        <h2>Mon Top 3 séries</h2>
         <img src={top1serie} alt={memberName} />
         <img src={top2serie} alt={memberName} />
         <img src={top3serie} alt={memberName} />
       </div>
       <div>
-        <h3>Mes liens</h3>
+        <h2>Mes liens</h2>
         <p>{memberMail}</p>
         <p>{memberGithub}</p>
         <p>{memberLinkedIn}</p>
