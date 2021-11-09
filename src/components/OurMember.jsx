@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import logoMail from '../assets/img/logMail.png';
+// import logoLinkedin from '../assets/img/logLinkedin.png';
+// import logoGithub from '../assets/img/logGithub.png';
 import './OurMember.css';
 
 const OurMember = ({
@@ -18,26 +21,50 @@ const OurMember = ({
 }) => {
   return (
     <div className="member">
-      <div>
+      <div className='presentation'>
         <h2>{memberName}</h2>
         <img src={memberAvatar} alt={memberName} />
         <p>{memberPresentation}</p>
       </div>
-      <div>
+      <div className='top'>
         <h2>Mon Top 3 films</h2>
-        <img src={top1film} alt={memberName} />
-        <img src={top2film} alt={memberName} />
-        <img src={top3film} alt={memberName} />
+        <figcaption>
+          <h3 className='first'>1</h3>
+          <img src={top1film} alt={memberName} />
+        </figcaption>
+        <figcaption>
+          <h3 className='second'>2</h3>
+          <img src={top2film} alt={memberName} />
+        </figcaption>
+        <figcaption>
+          <h3 className='third'>3</h3>
+          <img src={top3film} alt={memberName} />
+        </figcaption>
         <h2>Mon Top 3 séries</h2>
-        <img src={top1serie} alt={memberName} />
-        <img src={top2serie} alt={memberName} />
-        <img src={top3serie} alt={memberName} />
+        <figcaption>
+          <h3 className='first'>1</h3>
+          <img src={top1serie} alt={memberName} />
+        </figcaption>
+        <figcaption>
+          <h3 className='second'>2</h3>
+          <img src={top2serie} alt={memberName} />
+        </figcaption>
+        <figcaption>
+          <h3 className='third'>3</h3>
+          <img src={top3serie} alt={memberName} />
+        </figcaption>
       </div>
-      <div>
+      <div className='links'>
         <h2>Mes liens</h2>
-        <p>{memberMail}</p>
-        <p>{memberGithub}</p>
-        <p>{memberLinkedIn}</p>
+        <a href={memberMail} target="_blank" rel="noreferrer">
+          {/* <img src='logoMail' alt="Icone Mail" className='icone' /> */}
+        </a>
+        <a href={memberGithub} target="_blank" rel="noreferrer">
+          {/* <img src='logoGithub' alt="Icone Git Hub" className='icone' /> */}
+        </a>
+        <a href={memberLinkedIn} target="_blank" rel="noreferrer">
+          {/* <img src='logoLinkedin' alt="Icone LinkedIn" className='icone' /> */}
+        </a>
       </div>
     </div>
   );

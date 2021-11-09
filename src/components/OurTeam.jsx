@@ -4,6 +4,12 @@ import mathilde from '../assets/img/mathilde.png';
 import aphideth from '../assets/img/aphideth.png';
 import giovanni from '../assets/img/giovanni.png';
 import kevin from '../assets/img/kevin.jpg';
+import element from '../assets/img/element.png';
+import leon from '../assets/img/leon.png';
+import bigFish from '../assets/img/bigFish.jpg';
+import gameOfThrones from '../assets/img/gameOfThrones.jpeg';
+import malcolm from '../assets/img/malcolm.jpg';
+import shigekiNoKyojin from '../assets/img/shigekiNoKyojin.jpg';
 import './OurTeam.css';
 import OurMember from './OurMember';
 // import Title from './Title';
@@ -46,12 +52,12 @@ const OurTeam = () => {
       name: 'Kévin',
       avatar: kevin,
       presentation: 'Plop',
-      top1film: kevin,
-      top2film: kevin,
-      top3film: kevin,
-      top1serie: kevin,
-      top2serie: kevin,
-      top3serie: kevin,
+      top1film: element,
+      top2film: leon,
+      top3film: bigFish,
+      top1serie: gameOfThrones,
+      top2serie: shigekiNoKyojin,
+      top3serie: malcolm,
       mail: 'kevinbruno90@gmail.com',
       github: 'https:github.com/KvnBrn',
       linkedin: 'https://www.linkedin.com/in/kevin-bruno-983a6417b/',
@@ -90,7 +96,7 @@ const OurTeam = () => {
             onRequestClose={() => setOpenModal1(false)}
             style={{
               overlay: {
-                backgroundColor: 'grey',
+                backgroundColor: 'black',
               },
             }}
           >
@@ -109,8 +115,8 @@ const OurTeam = () => {
                 memberGithub={team[1].github}
                 memberLinkedIn={team[1].linkedin}
               />
-              <button type="button" onClick={() => setOpenModal1(false)}>
-                Close
+              <button className="closeBtn" type="button" onClick={() => setOpenModal1(false)}>
+                X
               </button>
             </div>
           </Modal>
@@ -130,7 +136,7 @@ const OurTeam = () => {
             onRequestClose={() => setOpenModal2(false)}
             style={{
               overlay: {
-                backgroundColor: 'grey',
+                backgroundColor: 'black',
               },
             }}
           >
@@ -149,8 +155,8 @@ const OurTeam = () => {
                 memberGithub={team[0].github}
                 memberLinkedIn={team[0].linkedin}
               />
-              <button type="button" onClick={() => setOpenModal2(false)}>
-                Close
+              <button className="closeBtn" type="button" onClick={() => setOpenModal2(false)}>
+                X
               </button>
             </div>
           </Modal>
@@ -170,7 +176,7 @@ const OurTeam = () => {
             onRequestClose={() => setOpenModal3(false)}
             style={{
               overlay: {
-                backgroundColor: 'grey',
+                backgroundColor: 'black',
               },
             }}
           >
@@ -189,8 +195,8 @@ const OurTeam = () => {
                 memberGithub={team[3].github}
                 memberLinkedIn={team[3].linkedin}
               />
-              <button type="button" onClick={() => setOpenModal3(false)}>
-                Close
+              <button className="closeBtn" type="button" onClick={() => setOpenModal3(false)}>
+                X
               </button>
             </div>
           </Modal>
@@ -210,7 +216,7 @@ const OurTeam = () => {
             onRequestClose={() => setOpenModal4(false)}
             style={{
               overlay: {
-                backgroundColor: 'grey',
+                backgroundColor: 'black',
               },
             }}
           >
@@ -229,8 +235,8 @@ const OurTeam = () => {
                 memberGithub={team[2].github}
                 memberLinkedIn={team[2].linkedin}
               />
-              <button type="button" onClick={() => setOpenModal4(false)}>
-                Close
+              <button className="closeBtn" type="button" onClick={() => setOpenModal4(false)}>
+                X
               </button>
             </div>
           </Modal>

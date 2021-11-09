@@ -6,6 +6,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 .home-movies-popularity {
@@ -36,4 +37,10 @@ body {
 
 .m_overview {
   padding: 0.5rem;
+}
+
+@media screen and (min-width: 426px) {
+  .home {
+    margin-bottom: initial;
+  }
 }
