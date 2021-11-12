@@ -1,7 +1,7 @@
 import './Title.css';
 //import PropTypes from 'prop-types';
 
-const Title = (props/* { titleName } */) => {
+const Title = (props /* { titleName } */) => {
   return (
     <div className="title">
       <h2>{props.titleName}</h2>

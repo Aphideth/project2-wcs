@@ -1,6 +1,103 @@
-.movie {
+.main-container {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 1rem;
+  text-align: center;
+  padding: 2rem;
+  color: var(--beige-color);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.main-container button {
+  color: black;
+  background-color: var(--beige-color);
+  cursor: pointer;
+}
+.main-container button a {
+  text-decoration: none;
+  color: black;
+}
+.poster {
+  border-radius: 10px;
+}
+.close-card {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 2rem;
+}
+.close-card button {
+  font-size: 1.3rem;
+  font-weight: bolder;
+  color: var(--red-color);
+}
+
+@media screen and (min-width: 1025px) {
+  .right-container {
+    width: 45vw;
+    padding-left: 3rem;
+  }
+  .right-container button {
+    border-radius: 10px;
+    padding: 0.2rem;
+  }
+  .title {
+    display: flex;
+    justify-content: flex-start;
+    width: 40vw;
+    margin: 0;
+    padding: 0;
+  }
+  .title h2 {
+    margin: 0;
+    padding: 0;
+  }
+  .right-top {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+  }
+  .right-top h3 {
+    padding-right: 2rem;
+    color: var(--lightblue-color);
+  }
+  .favorite {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+  }
+  .right-middle {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+  }
+  .right-middle h4 {
+    margin: 0.5rem 0;
+  }
+  .blue-color {
+    color: var(--lightblue-color);
+  }
+  .release, .duration, .note {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+    padding: 0.5rem;
+    border: 1px solid white;
+    border-radius: 8px;
+  }
+  .right-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .right-bottom h4 {
+    color: var(--lightblue-color);
+    margin-bottom: 0.5rem;
+  }
+  .right-bottom p {
+    display: flex;
+    justify-self: left;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 0.5rem 0.2rem 2rem 0;
+    border: 1px solid white;
+    border-radius: 10px;
+  }
 }

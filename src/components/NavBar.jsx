@@ -15,7 +15,7 @@ import WIA_2222 from '../assets/img/WIA_2222.png';
 import SearchBar from './SearchBar';
 
 library.add(faHome, faFilm, faTv, faHeart, faUsers);
-const NavBar = ({ items }) => {
+const NavBar = ({ popularMovies }) => {
   const [isActive, setIsActive] = useState(false);
   const toggleClass = () => setIsActive(!isActive);
   return (
@@ -30,31 +30,31 @@ const NavBar = ({ items }) => {
           <li className="navBar-link">
             <Link to="/">
               <FontAwesomeIcon className="icon-menu" icon="home" />
-              <span className="string-menu string-menu-accueil">Accueil</span>
+              <span className="string-menu string-menu-accueil">Home</span>
             </Link>
           </li>
           <li className="navBar-link">
-            <Link to="/Movies">
+            <Link to="/movies">
               <FontAwesomeIcon className="icon-menu" icon="film" />
-              <span className="string-menu">Films</span>
+              <span className="string-menu">Movies</span>
             </Link>
           </li>
           <li className="navBar-link">
-            <Link to="/Series">
+            <Link to="/series">
               <FontAwesomeIcon className="icon-menu" icon="tv" />
-              <span className="string-menu">Séries</span>
+              <span className="string-menu">Series</span>
             </Link>
           </li>
           <li className="navBar-link">
-            <Link to="/Favorites">
+            <Link to="/favorites">
               <FontAwesomeIcon className="icon-menu" icon="heart" />
-              <span className="string-menu">Favoris</span>
+              <span className="string-menu">Favorites</span>
             </Link>
           </li>
           <li className="navBar-link">
-            <Link to="/OurTeam">
+            <Link to="/ourteam">
               <FontAwesomeIcon className="icon-menu" icon="users" />
-              <span className="string-menu">Notre Equipe</span>
+              <span className="string-menu">Our Team</span>
             </Link>
           </li>
         </ul>
@@ -62,7 +62,7 @@ const NavBar = ({ items }) => {
           <span className="bar" />
         </button>
         <div className="navSearchBar">
-          <SearchBar items={items} />
+          <SearchBar popularMovies={popularMovies} />
         </div>
       </nav>
     </div>

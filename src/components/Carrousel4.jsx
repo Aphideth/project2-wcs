@@ -9,15 +9,15 @@ import {
 import './Carrousel.css';
 
 library.add(faChevronRight, faChevronLeft);
-const Carrousel = ({ recentMovies, setMovieId }) => {
+const Carrousel = ({ recentSeries }) => {
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
-    setCurrent(current === recentMovies.length - 1 ? 0 : current + 1);
+    setCurrent(current === recentSeries.length - 1 ? 0 : current + 1);
   };
 
   const prevSlide = () => {
-    setCurrent(current === 0 ? recentMovies.length - 1 : current - 1);
+    setCurrent(current === 0 ? recentSeries.length - 1 : current - 1);
   };
 
   return (
@@ -32,7 +32,7 @@ const Carrousel = ({ recentMovies, setMovieId }) => {
         icon="chevron-right"
         onClick={nextSlide}
       />
-      {recentMovies.map((movie, index) => (
+      {recentSeries.map((serie, index) => (
         <div
           className={index === current ? 'slide active' : 'slide'}
           key={index}
@@ -41,24 +41,19 @@ const Carrousel = ({ recentMovies, setMovieId }) => {
             <div className="slider-container">
               <div className="slider">
                 <div className="slider-front">
-                  <h1>{movie.original_title}</h1>
-                  <Link to={`/movie/${movie.id}`} key={index}>
-                    <div
-                      className="poster"
-                      onClick={() => setMovieId(movie.id)}
-                    >
-                      <img
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                        alt={movie.original_title}
-                        className="slider-img"
-                      />
-                    </div>
+                  <h1>{serie.name}</h1>
+                  <Link to="/series/:id">
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
+                      alt={serie.name}
+                      className="slider-img"
+                    />
                   </Link>
                 </div>
               </div>
               <img
-                src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-                alt={movie.original_title}
+                src={`https://image.tmdb.org/t/p/original/${serie.backdrop_path}`}
+                alt={serie.name}
                 className="slider-img-background"
               />
             </div>
