@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import emailjs from 'emailjs-com';
+
 //import Link from 'react-router-dom';
 import './Footer.css';
 
@@ -8,11 +10,31 @@ function Footer() {
   const [openModal, setOpenModal] = useState(false);
   const [openModalContact, setOpenModalContact] = useState(false);
 
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'gmail',
+        'template_209wzbv',
+        e.target,
+        'user_C5yaKoafAWtmBjxtvO0um'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
   return (
     <div className="footer dark-mode">
       <div className="sources-modal">
         <button className="sources" onClick={() => setOpenModal(true)}>
-          Our Sources
+          Sources
         </button>
         <Modal
           isOpen={openModal}
@@ -20,7 +42,7 @@ function Footer() {
           onRequestClose={() => setOpenModal(false)}
         >
           <div className="form-box">
-            <h2>Our sources</h2>
+            <h2>Nos sources</h2>
             <p>www.themoviedb.org/</p>
             <p>www.omdbapi.com/</p>
             <p>www.betaseries.com/api/</p>
@@ -35,7 +57,7 @@ function Footer() {
 
       <div className="contact-modal">
         <button className="contact" onClick={() => setOpenModalContact(true)}>
-          Contact us
+          Contact
         </button>
         <Modal
           isOpen={openModalContact}
@@ -43,23 +65,34 @@ function Footer() {
           onRequestClose={() => setOpenModalContact(false)}
         >
           <div className="form-box">
-            <h2>Contact us</h2>
-            <form>
+            <h2>Contact</h2>
+            <form onSubmit={sendEmail}>
               <div className="form">
-                <label> An advice ? </label>
-                <label> Any suggestion ? </label>
-                <label> You can contact us here !</label>
-                <input type="text" required="required" placeholder="Name" />
-                <input type="email" required="required" placeholder="Mail" />
+                <label> Une demande ? </label>
+                <label> Une suggestion ? </label>
+                <label> Vous pouvez nous contacter ici !</label>
+                <input
+                  type="text"
+                  required="required"
+                  placeholder="Nom"
+                  name="name"
+                />
+                <input
+                  type="email"
+                  required="required"
+                  placeholder="E-mail"
+                  name="email"
+                />
                 <textarea
                   type="text"
                   required="required"
                   rows="5"
-                  placeholder="Tape your message here..."
+                  placeholder="Message"
+                  name="message"
                 />
               </div>
               <button type="submit" id="submitBtn" className="submitBtn">
-                Send
+                Envoyer
               </button>
             </form>
           </div>
