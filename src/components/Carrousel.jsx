@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -11,23 +11,34 @@ import './Carrousel.css';
 // import Title from './Title';
 
 library.add(faChevronRight, faChevronLeft);
-const Carrousel = ( {items} ) => {
-  const [current, setCurrent] = useState(0)
+const Carrousel = ({ items }) => {
+  const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
     setCurrent(current === items.length - 1 ? 0 : current + 1);
-  }
+  };
 
   const prevSlide = () => {
     setCurrent(current === 0 ? items.length - 1 : current - 1);
-  }
+  };
 
   return (
     <div className="carrousel">
-      <FontAwesomeIcon className="left-arrow" icon="chevron-left" onClick={prevSlide} />
-      <FontAwesomeIcon className="right-arrow" icon="chevron-right" onClick={nextSlide} />
+      <FontAwesomeIcon
+        className="left-arrow"
+        icon="chevron-left"
+        onClick={prevSlide}
+      />
+      <FontAwesomeIcon
+        className="right-arrow"
+        icon="chevron-right"
+        onClick={nextSlide}
+      />
       {items.map((movie, index) => (
-        <div className={index === current ? 'slide active' : 'slide'} key={index}>
+        <div
+          className={index === current ? 'slide active' : 'slide'}
+          key={index}
+        >
           {index === current && (
             <div className="slider-container">
               <div className="slider">
