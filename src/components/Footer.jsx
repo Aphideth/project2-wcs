@@ -7,6 +7,9 @@ Modal.setAppElement('#root');
 function Footer() {
   const [openModal, setOpenModal] = useState(false);
   const [openModalContact, setOpenModalContact] = useState(false);
+  const formSend = (message) => {
+    alert(message);
+  };
 
   return (
     <div className="footer dark-mode">
@@ -58,7 +61,14 @@ function Footer() {
                   placeholder="Tape your message here..."
                 />
               </div>
-              <button type="submit" id="submitBtn" className="submitBtn">
+              <button
+                type="submit"
+                id="submitBtn"
+                className="submitBtn"
+                onClick={() =>
+                  formSend(`You've sending your message! Thank you!`)
+                }
+              >
                 Send
               </button>
             </form>
