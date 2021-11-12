@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Title from './Title';
 import './Movie.css';
 
 const apiKey = '5727abed527bf8c8099d66876a9bf967';
@@ -28,11 +28,13 @@ const Movie = (movieId) => {
           <img
             src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`}
             alt={movieDetail.original_title}
-            className="poster"
+            className="movie-poster"
           />
         </div>
         <div className="right-container">
-          <Title titleName={movieDetail.original_title} />
+          <div className="main-title">
+            <h1>{movieDetail.original_title} </h1>
+          </div>
           <div className="right-top">
             {movieDetail.genres?.map((genre, index) => (
               <h3 key={index}>{genre.name}</h3>
@@ -70,9 +72,13 @@ const Movie = (movieId) => {
               </button>
             </div>
           </div>
-          <div className="close-card">
-            <button className="close">X</button>
-          </div>
+          <Link to="/movies">
+            <div className="close-card">
+              <button className="close" onClick={Link}>
+                X
+              </button>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
