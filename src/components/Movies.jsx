@@ -1,13 +1,12 @@
-import React from 'react';
+import Carrousel from './Carrousel';
+import Carrousel2 from './Carrousel2';
 import './Movies.css';
-// import Movie from './Movie';
-// import Carrousel from './Carrousel';
-// import Article from './Article';
 
-const Movies = () => {
+const Movies = ({ recentMovies, popularMovies, setMovieId }) => {
   return (
     <div className="movies">
-      {/* <Carrousel /> */}
+      <Carrousel recentMovies={recentMovies} setMovieId={setMovieId} />
+      <Carrousel2 popularMovies={popularMovies} setMovieId={setMovieId} />
     </div>
   );
 };

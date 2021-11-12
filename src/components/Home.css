@@ -8,39 +8,3 @@ body {
   flex-direction: column;
   margin-bottom: 2rem;
 }
-
-.home-movies-popularity {
-  width: fit-content;
-  max-width: 70vw;
-  text-align: center;
-  padding-top: 1rem;
-  border-radius: 20px;
-  color: var(--blue-color);
-  background-color: var(--lightbeige-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem;
-}
-
-.home-movies-popularity img {
-  width: 500px;
-  border-radius: 20px;
-  box-shadow: 10px 5px 5px var(--beige-color);
-}
-
-
-.link {
-  text-decoration: none;
-  color: #164059;
-}
-
-.m_overview {
-  padding: 0.5rem;
-}
-
-@media screen and (min-width: 426px) {
-  .home {
-    margin-bottom: initial;
-  }
-}

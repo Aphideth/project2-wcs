@@ -12,7 +12,7 @@ import malcolm from '../assets/img/malcolm.jpg';
 import shigekiNoKyojin from '../assets/img/shigekiNoKyojin.jpg';
 import './OurTeam.css';
 import OurMember from './OurMember';
-// import Title from './Title';
+import Title from './Title';
 
 const OurTeam = () => {
   const [openModal1, setOpenModal1] = useState(false);
@@ -79,7 +79,7 @@ const OurTeam = () => {
   ];
   return (
     <div className="profils">
-      <h2>La Team Plop-Corn !</h2>
+      <Title titleName="Hi from the Plop-Corn team!" />
       <div className="profil">
         <div className="first-member">
           <div
@@ -115,7 +115,11 @@ const OurTeam = () => {
                 memberGithub={team[1].github}
                 memberLinkedIn={team[1].linkedin}
               />
-              <button className="closeBtn" type="button" onClick={() => setOpenModal1(false)}>
+              <button
+                className="closeBtn"
+                type="button"
+                onClick={() => setOpenModal1(false)}
+              >
                 X
               </button>
             </div>
@@ -155,7 +159,11 @@ const OurTeam = () => {
                 memberGithub={team[0].github}
                 memberLinkedIn={team[0].linkedin}
               />
-              <button className="closeBtn" type="button" onClick={() => setOpenModal2(false)}>
+              <button
+                className="closeBtn"
+                type="button"
+                onClick={() => setOpenModal2(false)}
+              >
                 X
               </button>
             </div>
@@ -195,7 +203,11 @@ const OurTeam = () => {
                 memberGithub={team[3].github}
                 memberLinkedIn={team[3].linkedin}
               />
-              <button className="closeBtn" type="button" onClick={() => setOpenModal3(false)}>
+              <button
+                className="closeBtn"
+                type="button"
+                onClick={() => setOpenModal3(false)}
+              >
                 X
               </button>
             </div>
@@ -235,7 +247,11 @@ const OurTeam = () => {
                 memberGithub={team[2].github}
                 memberLinkedIn={team[2].linkedin}
               />
-              <button className="closeBtn" type="button" onClick={() => setOpenModal4(false)}>
+              <button
+                className="closeBtn"
+                type="button"
+                onClick={() => setOpenModal4(false)}
+              >
                 X
               </button>
             </div>

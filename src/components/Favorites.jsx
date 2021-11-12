@@ -6,7 +6,7 @@ import Movie from './Movie';
 const Favorites = () => {
   return (
     <div className="Favorites">
-      <Title titleName="Mes Favoris"/>
+      <Title titleName="Mes Favoris" />
       <div className="fav">
         <Movie />
         <Movie />

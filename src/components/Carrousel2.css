@@ -1,0 +1,145 @@
+.carrousel-2 {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.slider-2 {
+  display: flex;
+}
+
+.slider-container-2 {
+  display: flex;
+}
+
+.slider-front-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.slider-2 h1 {
+  text-align: center;
+  width: 112px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--beige-color);
+}
+
+.slider-2-img {
+  border-radius: 10px;
+  width: 100px;
+  margin: 0.8rem 0.8rem 0 0.8rem;
+}
+
+.right-arrow  {
+  position: absolute;
+  top: 45%;
+  right: 10px;
+  font-size: 2rem;
+  color: var(--beige-color);
+  z-index: 3;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 45%;
+  left: 10px;
+  font-size: 2rem;
+  color: var(--beige-color);
+  z-index: 3;
+  cursor: pointer;
+  user-select: none;
+}
+
+.first-prev, .last-prev {
+  display: none;
+}
+
+/* Medium devices */
+
+@media screen and (min-width: 426px) {
+  .carrousel {
+    height: 100vh;
+    width: 100vw;
+  }
+  .title {
+    font-size: 1.5rem;
+    width: 100vw;
+  }
+  .slider-2 h1 {
+    width: 212px;
+    font-size: 1.3rem;
+  }
+  .slider-2-img {
+    width: 200px;
+  }
+  .right-arrow  {
+    top: 48%;
+    right: 16px;
+    font-size: 3rem;
+  }
+  .left-arrow {
+    top: 48%;
+    left: 16px;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .slider-2 h1 {
+    width: 192px;
+    font-size: 1.2rem;
+  }
+  .slider-2-img {
+    width: 180px;
+  }
+  .first-prev, .last-prev {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  .first-img {
+    margin-left: 0;
+  }
+  .last-img {
+    margin-right: 0;
+  }
+}
+
+/* Large devices */
+
+@media screen and (min-width: 1025px) {
+  .title {
+    margin-top: 3.5rem;
+    font-size: 2rem;
+  }
+  .slider-2 h1 {
+    width: 330px;
+    font-size: 1.7rem;
+  }
+  .slider-2-img {
+    width: 320px;
+    margin: 1.2rem;
+  }
+  .right-arrow {
+    top: 50%;
+    right: 32px;
+  }
+  .left-arrow {
+    top: 50%;
+    left: 32px;
+  }
+  .right-arrow, .left-arrow {
+    z-index: 5;
+  }
+}
