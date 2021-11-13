@@ -8,7 +8,7 @@ import './SearchBar.css';
 
 library.add(faSearch, faTimes);
 
-const SearchBar = ({ items }) => {
+const SearchBar = ({ popularMovies }) => {
   const [filteredData, setfilteredData] = useState([]);
   const [wordEntered, setwordEntered] = useState('');
 
@@ -20,7 +20,7 @@ const SearchBar = ({ items }) => {
       setfilteredData([]);
     } else {
       setfilteredData(
-        items.filter((value) =>
+        popularMovies.filter((value) =>
           value.title.toLowerCase().includes(searchValue.toLowerCase())
         )
       );

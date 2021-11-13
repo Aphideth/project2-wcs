@@ -1,11 +1,13 @@
 import React from 'react';
-import Serie from './Serie';
+import Carrousel3 from './Carrousel3';
+import Carrousel4 from './Carrousel4';
 import './Series.css';
 
-const Series = () => {
+const Series = ({ popularSeries, recentSeries }) => {
   return (
     <div className="Series">
-      <Serie />
+      <Carrousel4 recentSeries={recentSeries} />
+      <Carrousel3 popularSeries={popularSeries} />
     </div>
   );
 };

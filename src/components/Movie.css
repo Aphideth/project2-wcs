@@ -1,6 +1,201 @@
-.movie {
+.main-container {
   display: flex;
-  align-items: center;
-  flex-direction: column;
   padding: 1rem;
+  color: var(--beige-color);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.main-container button {
+  color: black;
+  background-color: var(--beige-color);
+  cursor: pointer;
+}
+.main-container button a {
+  text-decoration: none;
+  color: black;
+}
+.movie-poster {
+  width: 150px;
+  height: fit-content;
+  border-radius: 10px;
+}
+.right-container {
+  width: 55vw;
+  padding-left: 1rem;
+}
+.main-title h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+.title h2 {
+  margin: 0;
+  padding: 0;
+}
+.right-top {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+}
+.right-top h3 {
+  padding-right: 0.5rem;
+  color: var(--lightblue-color);
+}
+.favorite {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 4rem;
+}
+.right-middle {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  margin-left: -10.3rem;
+}
+.right-middle h4 {
+  margin: 0.5rem 0;
+}
+.blue-color {
+  color: var(--lightblue-color);
+}
+.release, .duration, .note {
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+.right-bottom h4 {
+  color: var(--lightblue-color);
+  margin-bottom: 0.5rem;
+  margin-left: -10.3rem;
+}
+.right-bottom p {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: justify;
+  margin-bottom: 3rem;
+  margin-left: -10.3rem;
+  padding: 0.5rem 0.5rem 2rem 0.5rem;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.links {
+  margin-left: -10.3rem;
+}
+.close-card {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 2rem;
+}
+.close-card button {
+  font-size: 1.3rem;
+  font-weight: bolder;
+  color: var(--red-color);
+}
+
+@media screen and (min-width: 426px) {
+  .main-container {
+    padding: 2rem;
+  }
+  .movie-poster {
+    width: 400px;
+  }
+  .right-container {
+    width: 45vw;
+  }
+  .right-container h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+  .right-top {
+    font-size: 1.17em;
+  }
+  .right-top h3 {
+    padding-right: 1rem;
+  }
+  .favorite {
+    margin-bottom: 1.5rem;
+  }
+  .right-middle {
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+  }
+  .right-bottom h4 {
+    margin-left: 0;
+  }
+  .right-bottom p {
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+  .links {
+    margin-left: 0;
+  }
+  .close-card {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 0rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .movie-poster {
+    width: auto;
+  }
+  .right-container {
+    padding-left: 2rem;
+  }
+  .right-container h1 {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+  .right-top h3 {
+    padding-right: 2rem;
+  }
+  .favorite {
+    margin-bottom: 4rem;
+  }
+  .right-middle {
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+  }
+  .release, .duration, .note {
+    margin-right: 1.5rem;
+    padding: 0.5rem;
+  }
+  .right-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .close-card {
+    margin-top: 5rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .right-container {
+    padding-left: 3rem;
+  }
+  .main-title {
+    display: flex;
+    flex-wrap: wrap;
+    width: 39vw;
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+  }
+  .release, .duration, .note {
+    margin-right: 2rem;
+  }
+}
+@media screen and (min-width: 1441px) {
+  .main-title {
+    width: 55vw;
+  }
+  .close-card {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 5rem;
+  }
 }

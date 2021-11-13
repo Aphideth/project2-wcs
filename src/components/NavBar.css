@@ -34,12 +34,15 @@
   background: var(--navBar-bg-color);
   list-style: none;
   transition: all 0.8s ease-in-out;
+  z-index: 4;
 }
 
 .show-nav .navBar-links {
   display: flex;
   width: 100%;
+  height: 100pc;
   position: absolute;
+  z-index: 4;
 }
 
 .navBar-link {
@@ -149,6 +152,7 @@
     flex-direction: row;
     width: auto;
     height: auto;
+    z-index: initial;
   }
 
   .navBar-link {

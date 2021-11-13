@@ -16,6 +16,7 @@
   color: var(--navBar-color);
   background: var(--navBar-bg-color);
   opacity: 0.9;
+  z-index: 4;
 }
 
 input:focus {
@@ -37,6 +38,7 @@ input:focus {
   opacity: 0.9;
   overflow: hidden;
   overflow-y: auto;
+  z-index: 4;
 }
 
 .dataResult::-webkit-scrollbar {
@@ -79,5 +81,14 @@ input:focus {
 @media screen and (min-width: 769px) {
   .search-icon, .times-icon {
     font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .search-menu-show {
+    top: 3.85em;
+  }
+  .dataResult {
+    top: 7.63em;
   }
 }
