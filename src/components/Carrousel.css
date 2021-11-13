@@ -30,9 +30,10 @@
 }
 
 .slider-img {
-  border-radius: 10px;
   width: 350px;
-  margin-bottom: 5rem;
+  height: fit-content;
+  margin-bottom: auto;
+  border-radius: 10px;
 }
 
 .slider-img-background {
@@ -73,6 +74,7 @@
     width: 100vw;
   }
   .slider h1 {
+    width: 450px;
     font-size: 2rem;
   }
   .slider-img {
@@ -102,10 +104,13 @@
     width: 500px;
     font-size: 2.5rem;
   }
-  .slider-img {
-    width: initial;
-  }
   .right-arrow, .left-arrow {
     z-index: 5;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .slider-img {
+    width: initial;
   }
 }

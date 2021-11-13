@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 .slider-2 {
@@ -124,12 +124,11 @@
     font-size: 2rem;
   }
   .slider-2 h1 {
-    width: 330px;
-    font-size: 1.7rem;
+    width: 252px;
+    font-size: 1.2rem;
   }
   .slider-2-img {
-    width: 320px;
-    margin: 1.2rem;
+    width: 240px;
   }
   .right-arrow {
     top: 50%;
