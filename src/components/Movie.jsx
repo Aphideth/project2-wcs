@@ -70,19 +70,16 @@ const Movie = (movieId) => {
               <p>{movieDetail.overview}</p>
             </div>
             <div className="links">
-              <button>
+              <div>
+                Visit the{' '}
                 <a href={movieDetail.homepage} target="_blank" rel="noreferrer">
-                  More infos
+                  official website
                 </a>
-              </button>
+              </div>
             </div>
           </div>
           <Link to="/movies">
-            <div className="close-card">
-              <button className="close" onClick={Link}>
-                X
-              </button>
-            </div>
+            <div className="close-card" onClick={Link}></div>
           </Link>
         </div>
       </div>
