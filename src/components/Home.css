@@ -27,17 +27,29 @@ body {
   width: 100px;
   padding: 2rem;
 }
+.colonne3 {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  padding: 2rem;
+}
+.colonne3 img {
+  width: 100px;
+  padding: 2rem;
+}
 .clic-to-show {
   display: flex;
   text-align: center;
   justify-content: center;
 }
-.show-result, .show-retry {
+.show-result,
+.show-retry {
   display: flex;
   text-align: center;
   border-radius: 10px;
 }
-.hide-result, .hide-retry {
+.hide-result,
+.hide-retry {
   display: none;
   text-align: center;
 }

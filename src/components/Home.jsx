@@ -8,47 +8,53 @@ import soda from '../assets/img/soda.png';
 import './Home.css';
 
 const Home = ({ popularMovies, recentMovies }) => {
-  const [beerChecked, setBeerChecked] = useState(false);
-  const [fauteuilChecked, setFauteuilChecked] = useState(false);
+  const [armChairChecked, setArmChairChecked] = useState(false);
   const [couchChecked, setCouchChecked] = useState(false);
   const [pizzaChecked, setPizzaChecked] = useState(false);
   const [popcornChecked, setPopcornChecked] = useState(false);
+  const [beerChecked, setBeerChecked] = useState(false);
   const [sodaChecked, setSodaChecked] = useState(false);
   let firstApi = 0;
   let secondApi = 0;
 
-  const handleChangeBeer = () => {
-    setBeerChecked(!beerChecked);
-  };
-  if (beerChecked === true) {
-    firstApi++;
-  }
-  const handleChangeFauteuil = () => {
-    setFauteuilChecked(!fauteuilChecked);
-  };
-  if (fauteuilChecked === true) {
-    firstApi++;
-  }
   const handleChangeCouch = () => {
     setCouchChecked(!couchChecked);
+    setArmChairChecked(false);
   };
   if (couchChecked === true) {
     firstApi++;
   }
+  const handleChangeArmChair = () => {
+    setArmChairChecked(!armChairChecked);
+    setCouchChecked(false);
+  };
+  if (armChairChecked === true) {
+    secondApi++;
+  }
   const handleChangePizza = () => {
     setPizzaChecked(!pizzaChecked);
+    setPopcornChecked(false);
   };
   if (pizzaChecked === true) {
-    secondApi++;
+    firstApi++;
   }
   const handleChangePopcorn = () => {
     setPopcornChecked(!popcornChecked);
+    setPizzaChecked(false);
   };
   if (popcornChecked === true) {
     secondApi++;
   }
+  const handleChangeBeer = () => {
+    setBeerChecked(!beerChecked);
+    setSodaChecked(false);
+  };
+  if (beerChecked === true) {
+    firstApi++;
+  }
   const handleChangeSoda = () => {
     setSodaChecked(!sodaChecked);
+    setBeerChecked(false);
   };
   if (sodaChecked === true) {
     secondApi++;
@@ -107,13 +113,13 @@ const Home = ({ popularMovies, recentMovies }) => {
           <div className="colonne2">
             <div>
               <label>
-                <div className={fauteuilChecked ? 'isChecked' : 'notChecked'}>
+                <div className={armChairChecked ? 'isChecked' : 'notChecked'}>
                   <img
                     src={fauteuil}
                     alt="fauteuil"
                     type="checkbox"
-                    couchChecked={fauteuilChecked}
-                    onClick={handleChangeFauteuil}
+                    couchChecked={armChairChecked}
+                    onClick={handleChangeArmChair}
                   />
                 </div>
               </label>
