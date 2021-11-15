@@ -9,6 +9,7 @@ import {
 import './Carrousel.css';
 
 library.add(faChevronRight, faChevronLeft);
+
 const Carrousel = ({ recentMovies, setMovieId }) => {
   const [current, setCurrent] = useState(0);
 
