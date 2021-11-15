@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import './Movie.css';
 
 const apiKey = '5727abed527bf8c8099d66876a9bf967';
@@ -51,7 +52,7 @@ const Movie = (movieId) => {
           <div className="right-middle">
             <div className="release">
               <h4 className="blue-color">Release</h4>
-              <h4>{movieDetail.release_date}</h4>
+              <h4>{moment(movieDetail.release_date).format('DD-MM-YYYY')}</h4>
             </div>
             <div className="duration">
               <h4 className="blue-color">Duration</h4>
