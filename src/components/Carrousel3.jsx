@@ -50,7 +50,7 @@ const Carrousel3 = ({ popularSeries }) => {
   };
 
   return (
-    <div className="carrousel-2">
+    <div className="carrousel-3">
       <FontAwesomeIcon
         className="left-arrow"
         icon="chevron-left"
@@ -62,20 +62,20 @@ const Carrousel3 = ({ popularSeries }) => {
         onClick={nextSlide}
       />
       <Title titleName="Series : the best successes" />
-      <div className="slider-container-2">
+      <div className="slider-container-3">
         {popularSeries.map((serie, index) => (
           <div
             className={index === firstPrevCurrent ? 'slide active' : 'slide'}
             key={index}
           >
             {index === firstPrevCurrent && (
-              <div className="slider-2">
-                <div className="slider-front-2 first-prev">
+              <div className="slider-3">
+                <div className="slider-front-3 first-prev">
                   <Link to="/series/:id">
                     <img
                       src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
                       alt={serie.name}
-                      className="slider-2-img first-img"
+                      className="slider-3-img first-img"
                     />
                   </Link>
                   <h1>{serie.name}</h1>
@@ -90,13 +90,13 @@ const Carrousel3 = ({ popularSeries }) => {
             key={index}
           >
             {index === prevCurrent && (
-              <div className="slider-2">
-                <div className="slider-front-2">
+              <div className="slider-3">
+                <div className="slider-front-3">
                   <Link to="/series/:id">
                     <img
                       src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
                       alt={serie.name}
-                      className="slider-2-img"
+                      className="slider-3-img"
                     />
                   </Link>
                   <h1>{serie.name}</h1>
@@ -111,13 +111,13 @@ const Carrousel3 = ({ popularSeries }) => {
             key={index}
           >
             {index === current && (
-              <div className="slider-2">
-                <div className="slider-front-2">
+              <div className="slider-3">
+                <div className="slider-front-3">
                   <Link to="/series/:id">
                     <img
                       src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
                       alt={serie.name}
-                      className="slider-2-img"
+                      className="slider-3-img"
                     />
                   </Link>
                   <h1>{serie.name}</h1>
@@ -132,13 +132,13 @@ const Carrousel3 = ({ popularSeries }) => {
             key={index}
           >
             {index === nextCurrent && (
-              <div className="slider-2">
-                <div className="slider-front-2">
+              <div className="slider-3">
+                <div className="slider-front-3">
                   <Link to="/series/:id">
                     <img
                       src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
                       alt={serie.name}
-                      className="slider-2-img"
+                      className="slider-3-img"
                     />
                   </Link>
                   <h1>{serie.name}</h1>
@@ -153,13 +153,13 @@ const Carrousel3 = ({ popularSeries }) => {
             key={index}
           >
             {index === lastNextCurrent && (
-              <div className="slider-2">
-                <div className="slider-front-2 last-prev">
+              <div className="slider-3">
+                <div className="slider-front-3 last-prev">
                   <Link to="/series/:id">
                     <img
                       src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
                       alt={serie.name}
-                      className="slider-2-img last-img"
+                      className="slider-3-img last-img"
                     />
                   </Link>
                   <h1>{serie.name}</h1>
