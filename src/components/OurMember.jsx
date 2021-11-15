@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import logoMail from '../assets/img/logMail.png';
-// import logoLinkedin from '../assets/img/logLinkedin.png';
-// import logoGithub from '../assets/img/logGithub.png';
+import mail from '../assets/img/mail.png';
+import linkedin from '../assets/img/linkedin.png';
+import github from '../assets/img/github.png';
 import './OurMember.css';
 
 const OurMember = ({
@@ -57,13 +57,13 @@ const OurMember = ({
       <div className="links">
         <h2>Mes liens</h2>
         <a href={memberMail} target="_blank" rel="noreferrer">
-          {/* <img src='logoMail' alt="Icone Mail" className='icone' /> */}
+          <img src={mail} alt="Icone Mail" className="icone" />
         </a>
         <a href={memberGithub} target="_blank" rel="noreferrer">
-          {/* <img src='logoGithub' alt="Icone Git Hub" className='icone' /> */}
+          <img src={github} alt="Icone LinkedIn" className="icone" />
         </a>
         <a href={memberLinkedIn} target="_blank" rel="noreferrer">
-          {/* <img src='logoLinkedin' alt="Icone LinkedIn" className='icone' /> */}
+          <img src={linkedin} alt="Icone LinkedIn" className="icone" />
         </a>
       </div>
     </div>
