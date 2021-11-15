@@ -9,6 +9,9 @@ Modal.setAppElement('#root');
 function Footer() {
   const [openModal, setOpenModal] = useState(false);
   const [openModalContact, setOpenModalContact] = useState(false);
+  const formSend = (message) => {
+    alert(message);
+  };
 
   function sendEmail(e) {
     e.preventDefault();
@@ -91,8 +94,15 @@ function Footer() {
                   name="message"
                 />
               </div>
-              <button type="submit" id="submitBtn" className="submitBtn">
-                Envoyer
+              <button
+                type="submit"
+                id="submitBtn"
+                className="submitBtn"
+                onClick={() =>
+                  formSend(`You've sending your message! Thank you!`)
+                }
+              >
+                Send
               </button>
             </form>
           </div>

@@ -245,10 +245,7 @@
 @media screen and (min-width: 1440px) {
   .navBar {
     padding: 0.8em 2em;
-  }
-
-  .navSearchBar {
-    padding-left: 2.5em;
+    justify-content: center;
   }
 
   .navBar-logo img {

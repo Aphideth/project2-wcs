@@ -33,16 +33,27 @@
 .right-top {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-size: 0.8rem;
 }
 .right-top h3 {
   padding-right: 0.5rem;
   color: var(--lightblue-color);
 }
-.favorite {
-  display: flex;
-  justify-content: flex-start;
+.isFavorite {
+  width: 40px;
+  height: 40px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/35/Emoji_u2665.svg");
+  background-size: 100%;
+  align-self: flex-start;
+  margin-bottom: 4rem;
+}
+.notFavorite {
+  width: 40px;
+  height: 40px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/52/Heart_icon_red_hollow.svg");
+  background-size: 100%;
+  align-self: flex-start;
   margin-bottom: 4rem;
 }
 .right-middle {
@@ -114,7 +125,10 @@
   .right-top h3 {
     padding-right: 1rem;
   }
-  .favorite {
+  .isFavorite {
+    margin-bottom: 1.5rem;
+  }
+  .notFavorite {
     margin-bottom: 1.5rem;
   }
   .right-middle {
@@ -152,8 +166,11 @@
   .right-top h3 {
     padding-right: 2rem;
   }
-  .favorite {
-    margin-bottom: 4rem;
+  .isFavorite {
+    margin-bottom: 3rem;
+  }
+  .notFavorite {
+    margin-bottom: 3rem;
   }
   .right-middle {
     justify-content: flex-start;
