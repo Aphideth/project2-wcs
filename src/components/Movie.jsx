@@ -8,7 +8,6 @@ const apiKey = '5727abed527bf8c8099d66876a9bf967';
 const Movie = (movieId) => {
   const [movieDetail, setMovieDetail] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
-  const [favourites, setFavourites] = useState([]);
 
   const fetchDetailMovie = async () => {
     const url = `https://api.themoviedb.org/3/movie/${movieId.movieId}?api_key=${apiKey}&language=en-US`;
@@ -23,10 +22,8 @@ const Movie = (movieId) => {
     fetchDetailMovie(movieId.movieId);
   }, [movieId.movieId]);
 
-  const handleClickFavorite = (movie) => {
+  const handleClickFavorite = () => {
     setIsFavorite(!isFavorite);
-    const newFavouriteList = [...favourites, movie]; //
-    setFavourites(newFavouriteList); //
   };
 
   return (
