@@ -1,32 +1,53 @@
 .profils h2 {
-  margin-top: 3rem;
   text-align: center;
+  padding-top: 3rem;
+  margin: 0;
+  font-size: 1.6rem;
   color: var(--beige-color);
 }
-
+.profils {
+  height: 600px;
+  background-image: url("https://www.okiwoki.com/images/produits/parodies-cinema/i-want-you-pull-enfant-noir-h-13-14-ans_2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .profil {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 18em;
 }
-
 .imgAvatar {
-  width: 10em;
-  margin: 1rem 0;
+  width: 6em;
+  margin: 2rem 0;
   border-radius: 50%;
-  border: 3px solid var(--beige-color);
+  cursor: pointer;
 }
-
-/* modal config */
-
-.ReactModal__Content {  /*ne fonctionne pas ?*/
-  padding: 0;
+.first-member img {
+  border: 3px solid var(--lightblue-color);
 }
-
-.ReactModal__Content--after-open {  /*ne fonctionne pas ?*/
-  padding: 0;
+.first-member img:hover {
+  box-shadow: 0 0 5px var(--lightblue-color), 0 0 10px var(--lightblue-color), 0 0 15px var(--lightblue-color), 0 0 20px var(--lightblue-color);
 }
-
+.second-member img {
+  border: 3px solid var(--red-color);
+}
+.second-member img:hover {
+  box-shadow: 0 0 5px var(--red-color), 0 0 10px var(--red-color), 0 0 15px var(--red-color), 0 0 20px var(--red-color);
+}
+.third-member img {
+  border: 3px solid var(--green-color);
+}
+.third-member img:hover {
+  box-shadow: 0 0 5px var(--green-color), 0 0 10px var(--green-color), 0 0 15px var(--green-color), 0 0 20px var(--green-color);
+}
+.fourth-member img {
+  border: 3px solid var(--purple-color);
+}
+.fourth-member img:hover {
+  box-shadow: 0 0 5px var(--purple-color), 0 0 10px var(--purple-color), 0 0 15px var(--purple-color), 0 0 20px var(--purple-color);
+}
 .closeBtn {
   position: absolute;
   font-size: 1.1rem;
@@ -38,47 +59,78 @@
   color: var(--red-color);
   cursor: pointer;
 }
-
 /* movies podium */
 .movies-podium {
   text-align: center;
 }
-
 .first-movie img,
 .second-third-movies img {
   width: 30vw;
 }
-
 .first-movie {
   margin: auto;
 }
-
 .second-third-movies {
   display: flex;
   justify-content: space-evenly;
 }
-
 /* series podium */
 .series-podium {
   text-align: center;
 }
-
 .first-series img,
 .second-third-series img {
   width: 30vw;
 }
-
 .first-series {
   margin: auto;
 }
-
 .second-third-series {
   display: flex;
   justify-content: space-evenly;
 }
-
 /* social links */
 .social-links {
   display: flex;
   justify-content: space-evenly;
+}
+
+@media screen and (min-width: 426px) {
+  .profils {
+    height: 800px;
+  }
+  .profils h2 {
+    margin-bottom: 15em;
+  }
+  .profil {
+    margin-top: 0;
+  }
+  .imgAvatar {
+    width: 9em;
+    margin: 3rem 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .profils {
+    height: 1050px;
+  }
+  .profils h2 {
+    font-size: 2.4rem;
+  }
+  .imgAvatar {
+    margin: 1rem 1rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .profils {
+    height: auto;
+  }
+  .profil {
+    justify-content: space-evenly;
+  }
+  .imgAvatar {
+
+  }
 }

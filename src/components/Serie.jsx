@@ -17,10 +17,24 @@ const Serie = (serieId) => {
       setSerieDetail(searchSerie);
     }
   };
-
   useEffect(() => {
     fetchDetailSerie(serieId.serieId);
   }, [serieId.serieId]);
+
+  // const [similarSerie, setSimilarSerie] = useState([]);
+
+  // const fetchSimilarSerie = async () => {
+  //   const datas = `https://api.themoviedb.org/3/tv/${serieId.serieId}/similar?api_key=${apiKey}&language=en-US&page=1`;
+  //   const responseSimilar = await fetch(datas);
+  //   const similarResult = await responseSimilar.json();
+  //   if (similarResult) {
+  //     setSimilarSerie(similarResult);
+  //   }
+  //   console.log(similarSerie);
+  // };
+  // useEffect(() => {
+  //   fetchSimilarSerie();
+  // }, []);
 
   const handleClickFavorite = () => {
     setIsFavorite(!isFavorite);
@@ -34,7 +48,7 @@ const Serie = (serieId) => {
 
   const [suggestions, setSuggestions] = React.useState(false);
   const togSuggestions = () => setSuggestions(!suggestions);
-  console.log(serieDetail.episode_run_time);
+
   return (
     <div className="serie-card">
       <div className="serie-main-container">
@@ -138,6 +152,13 @@ const Serie = (serieId) => {
                 </div>
               ))}
             </div>
+            {/* <div className={suggestions ? 'showSimilar' : 'noSimilar'}>
+              {similarSerie?.map((similar, index) => (
+                <div key={index}>
+                  <h4>{similar.name}</h4>
+                </div>
+              ))}
+            </div> */}
           </div>
           <Link to="/series">
             <div className="serie-close-container">

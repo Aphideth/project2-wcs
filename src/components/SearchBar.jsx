@@ -46,7 +46,7 @@ const SearchBar = ({ setMovieId }) => {
           name="searchBar"
           value={wordEntered}
           id="searchBar"
-          placeholder="Rechercher un titre, un artiste, un réalisateur..."
+          placeholder="Rechercher votre film..."
           onChange={handleFilter}
         />
         {getMovieRequest.length !== 0 && (

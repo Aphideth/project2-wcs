@@ -3,67 +3,131 @@
   color: var(--lightbeige-color);
   background: rgba(0, 0, 0, 0.8);
 }
-
 .member img {
   width: 250px;
   margin: 1.5rem;
   border-radius: 12px;
 }
-
 .member h2 {
   border-top: 15px solid rgba(0, 0, 0, 1);
   border-bottom: 15px solid rgba(0, 0, 0, 1);
 }
-
 .member h3 {
   margin-bottom: 0;
 }
-
+.top-movie, .top-serie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .first {
-  width: 1.4em;
-  margin-left: 45%;
-  color: aliceblue;
-  background-color: rgb(255, 215, 0);
-  border: 2px solid rgb(255, 215, 0);
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 43%;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/16/ALTIN.png");
+  background-size: 100%;
 }
-
 .second {
-  width: 1.4em;
-  margin-left: 45%;
-  color: aliceblue;
-  background-color: rgb(134, 137, 146);
-  border: 2px solid rgb(134, 137, 146);
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 43%;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/7f/GUMUS.png");
+  background-size: 100%;
 }
-
 .third {
-  width: 1.4em;
-  margin-left: 45%;
-  color: aliceblue;
-  background-color: rgb(97, 78, 26);
-  border: 2px solid rgb(97, 78, 26);
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 43%;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/ad/BRONZ.png");
+  background-size: 100%;
 }
-
 .presentation h2 {
   margin-top: 0;
 }
-
 .presentation img {
   width: 10em;
   margin: 1rem 0;
   border-radius: 50%;
   border: 3px solid var(--blue-color);
 }
-
-.links p {
-  margin-bottom: 0;
+.our-links img {
+  width: 40px;
 }
 
-.links img {
-  width: 70px;
-}
 /* Medium devices */
 
+@media screen and (min-width: 426px) {
+  .member p {
+    width: 40vw;
+  }
+  .presentation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+  }
+  .presentation h2 {
+    width: 100vw;
+  }
+  .first, .second, .third {
+    margin-left: 46%;
+  }
+  .our-links img {
+    width: 60px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .member img {
+    height: fit-content;
+  }
+  .member figcaption {
+    height: fit-content;
+  }
+  .top-movie, .top-serie {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .top-movie h2, .top-serie h2, .our-links h2 {
+    width: 100vw;
+  }
+  .top-movie :nth-child(2) {
+    order: 3;
+    margin-bottom: 1rem;
+  }
+  .top-movie :nth-child(3) {
+    order: 2;
+    margin-top: 3rem;
+  }
+  .top-movie :nth-child(4) {
+    order: 4;
+    margin-top: 7rem;
+  }
+  .top-serie :nth-child(2) {
+    order: 3;
+    margin-bottom: 1rem;
+  }
+  .top-serie :nth-child(3) {
+    order: 2;
+    margin-top: 3rem;
+  }
+  .top-serie :nth-child(4) {
+    order: 4;
+    margin-top: 7rem;
+  }
+  .our-links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
 /* Large devices */
+
+@media screen and (min-width: 1441px) {
+  .presentation, .top-movie, .top-serie {
+    justify-content: space-evenly;
+  }
+}

@@ -18,7 +18,6 @@ import scrubs from '../assets/img/scrubs.jpg';
 import xmen from '../assets/img/xmen.jpg';
 import './OurTeam.css';
 import OurMember from './OurMember';
-import Title from './Title';
 
 const OurTeam = () => {
   const [openModal1, setOpenModal1] = useState(false);
@@ -29,7 +28,7 @@ const OurTeam = () => {
     {
       name: 'Aphideth',
       avatar: aphideth,
-      presentation: 'Plop',
+      presentation: `La première règle du Plop Club est : il est interdit de parler du Plop Club.`,
       top1film: pulpfiction,
       top2film: chihiro,
       top3film: xmen,
@@ -57,7 +56,7 @@ const OurTeam = () => {
     {
       name: 'Kévin',
       avatar: kevin,
-      presentation: 'Plop',
+      presentation: `Le temps est sans importance, seul le 'Plop' est important.`,
       top1film: element,
       top2film: leon,
       top3film: bigFish,
@@ -85,7 +84,7 @@ const OurTeam = () => {
   ];
   return (
     <div className="profils">
-      <Title titleName="Hi from the Plop-Corn team!" />
+      <h2>La team Plop-Corn vous salue!</h2>
       <div className="profil">
         <div className="first-member">
           <div
