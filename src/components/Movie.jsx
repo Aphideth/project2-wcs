@@ -9,6 +9,7 @@ const apiKey = '5727abed527bf8c8099d66876a9bf967';
 const Movie = (movieId) => {
   const [movieDetail, setMovieDetail] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [wishList, setWishList] = useState([]);
 
   const fetchDetailMovie = async () => {
     const url = `https://api.themoviedb.org/3/movie/${movieId.movieId}?api_key=${apiKey}&language=fr-FR`;
@@ -23,8 +24,37 @@ const Movie = (movieId) => {
     fetchDetailMovie(movieId.movieId);
   }, [movieId.movieId]);
 
-  const handleClickFavorite = () => {
+  const handleClickIsFavorite = () => {
     setIsFavorite(!isFavorite);
+  };
+
+  //On teste les favoris ci-dessous
+
+  const getFavorites = () => {
+    const favoriteList = localStorage.getItem('wishList');
+    favoriteList
+      ? setWishList(JSON.parse(favoriteList))
+      : localStorage.setItem('wishList', JSON.stringify([]));
+  };
+  console.log(wishList);
+  const addToWishList = (movieId) => {
+    const favoriteList = localStorage.getItem('wishList');
+    const newFavoriteList = favoriteList ? JSON.parse(favoriteList) : [];
+    if (!newFavoriteList.includes(movieId)) {
+      console.log(movieId);
+      console.log(newFavoriteList);
+      newFavoriteList.push(movieId);
+    }
+    localStorage.setItem('wishList', JSON.stringify(newFavoriteList));
+    getFavorites();
+  };
+
+  const deleteFromWishList = (movieId) => {
+    const favoriteList = localStorage.getItem('wishList');
+    const newFavoriteList = favoriteList ? JSON.parse(favoriteList) : [];
+    const newList = newFavoriteList.filter((id) => id !== movieId);
+    localStorage.setItem('wishList', JSON.stringify(newList));
+    getFavorites();
   };
 
   return (
@@ -46,8 +76,15 @@ const Movie = (movieId) => {
               <h3 key={index}>{genre.name}</h3>
             ))}
           </div>
-          <div className="favorite" onClick={handleClickFavorite}>
-            <div className={isFavorite ? 'isFavorite' : 'notFavorite'} />
+          <div className="favorite" onClick={handleClickIsFavorite}>
+            <div
+              className={!isFavorite ? 'isFavorite-hide' : 'isFavorite'}
+              onClick={() => addToWishList(movieId)}
+            />
+            <div
+              className={!isFavorite ? 'notFavorite' : 'notFavorite-hide'}
+              onClick={() => deleteFromWishList(movieId)}
+            />
           </div>
           <div className="right-middle">
             <div className="release">
