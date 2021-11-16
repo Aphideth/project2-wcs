@@ -8,11 +8,20 @@ import element from '../assets/img/element.png';
 import leon from '../assets/img/leon.png';
 import bigFish from '../assets/img/bigFish.jpg';
 import gameOfThrones from '../assets/img/gameOfThrones.jpeg';
-import malcolm from '../assets/img/malcolm.jpg';
 import shigekiNoKyojin from '../assets/img/shigekiNoKyojin.jpg';
+import chihiro from '../assets/img/chihiro.jpg';
+import daria from '../assets/img/daria.jpg';
+import futurama from '../assets/img/futurama.jpg';
+import pulpfiction from '../assets/img/pulpfiction.jpg';
+import scrubs from '../assets/img/scrubs.jpg';
+import xmen from '../assets/img/xmen.jpg';
+import matrix from '../assets/img/matrix.jpg';
+import shutterisland from '../assets/img/shutterisland.jpg';
+import breakingbad from '../assets/img/breakingbad.jpg';
+import malcolminthemiddle from '../assets/img/malcolminthemiddle.jpg';
+import herocorp from '../assets/img/herocorp.jpg';
 import './OurTeam.css';
 import OurMember from './OurMember';
-import Title from './Title';
 
 const OurTeam = () => {
   const [openModal1, setOpenModal1] = useState(false);
@@ -23,14 +32,14 @@ const OurTeam = () => {
     {
       name: 'Aphideth',
       avatar: aphideth,
-      presentation: 'Plop',
-      top1film: aphideth,
-      top2film: aphideth,
-      top3film: aphideth,
-      top1serie: aphideth,
-      top2serie: aphideth,
-      top3serie: aphideth,
-      mail: 'aphideth.dev@gmail.com',
+      presentation: `La première règle du Plop Club est : il est interdit de parler du Plop Club.`,
+      top1film: pulpfiction,
+      top2film: chihiro,
+      top3film: xmen,
+      top1serie: scrubs,
+      top2serie: futurama,
+      top3serie: daria,
+      mail: 'mailto:aphideth.dev@gmail.com',
       github: 'https://github.com/Aphideth',
       linkedin: 'https://www.linkedin.com/in/aphidethp/',
     },
@@ -44,21 +53,21 @@ const OurTeam = () => {
       top1serie: mathilde,
       top2serie: mathilde,
       top3serie: mathilde,
-      mail: 'mathildelie@gmail.com',
+      mail: 'mailto:mathildelie@gmail.com',
       github: 'https://github.com/Mathilde-E',
       linkedin: 'https://www.linkedin.com/in/mathilde-elie-142743204/',
     },
     {
       name: 'Kévin',
       avatar: kevin,
-      presentation: 'Plop',
+      presentation: `Le temps est sans importance, seul le 'Plop' est important.`,
       top1film: element,
       top2film: leon,
       top3film: bigFish,
       top1serie: gameOfThrones,
       top2serie: shigekiNoKyojin,
-      top3serie: malcolm,
-      mail: 'kevinbruno90@gmail.com',
+      top3serie: malcolminthemiddle,
+      mail: 'mailto:kevinbruno90@gmail.com',
       github: 'https:github.com/KvnBrn',
       linkedin: 'https://www.linkedin.com/in/kevin-bruno-983a6417b/',
     },
@@ -66,20 +75,20 @@ const OurTeam = () => {
       name: 'Giovanni',
       avatar: giovanni,
       presentation: 'Plop',
-      top1film: giovanni,
-      top2film: giovanni,
-      top3film: giovanni,
-      top1serie: giovanni,
-      top2serie: giovanni,
-      top3serie: giovanni,
-      mail: 'rossi.web@gmail.com',
+      top1film: element,
+      top2film: matrix,
+      top3film: shutterisland,
+      top1serie: breakingbad,
+      top2serie: malcolminthemiddle,
+      top3serie: herocorp,
+      mail: 'mailto:rossi.web@gmail.com',
       github: 'https://github.com/eths09',
       linkedin: 'https://www.linkedin.com/in/giovanni-rossi-4b0b98221/',
     },
   ];
   return (
     <div className="profils">
-      <Title titleName="Hi from the Plop-Corn team!" />
+      <h2>La team Plop-Corn vous salue!</h2>
       <div className="profil">
         <div className="first-member">
           <div

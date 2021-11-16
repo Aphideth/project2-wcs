@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import Movies from './components/Movies';
 import Movie from './components/Movie';
 import Series from './components/Series';
+import Serie from './components/Serie';
 import Favorites from './components/Favorites';
 import OurTeam from './components/OurTeam';
 import Footer from './components/Footer';
@@ -62,12 +63,13 @@ const App = () => {
   }, []);
 
   const [movieId, setMovieId] = useState(0);
+  const [serieId, setSerieID] = useState(0);
 
   return (
     <Router>
       <div>
         <header>
-          <NavBar popularMovies={popularMovies} />
+          <NavBar popularMovies={popularMovies} setMovieId={setMovieId} />
         </header>
         <div>
           <Curtain />
@@ -88,7 +90,11 @@ const App = () => {
               <Series
                 popularSeries={popularSeries}
                 recentSeries={recentSeries}
+                setSerieID={setSerieID}
               />
+            </Route>
+            <Route exact path="/serie/:id">
+              <Serie serieId={serieId} />
             </Route>
             <Route path="/Favorites">
               <Favorites />

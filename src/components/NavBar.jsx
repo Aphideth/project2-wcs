@@ -15,7 +15,7 @@ import WIA_2222 from '../assets/img/WIA_2222.png';
 import SearchBar from './SearchBar';
 
 library.add(faHome, faFilm, faTv, faHeart, faUsers);
-const NavBar = ({ popularMovies }) => {
+const NavBar = ({ popularMovies, setMovieId }) => {
   const [isActive, setIsActive] = useState(false);
   const toggleClass = () => setIsActive(!isActive);
   return (
@@ -62,7 +62,7 @@ const NavBar = ({ popularMovies }) => {
           <span className="bar" />
         </button>
         <div className="navSearchBar">
-          <SearchBar popularMovies={popularMovies} />
+          <SearchBar popularMovies={popularMovies} setMovieId={setMovieId} />
         </div>
       </nav>
     </div>

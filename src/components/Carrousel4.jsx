@@ -9,7 +9,7 @@ import {
 import './Carrousel.css';
 
 library.add(faChevronRight, faChevronLeft);
-const Carrousel = ({ recentSeries }) => {
+const Carrousel = ({ recentSeries, setSerieID }) => {
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
@@ -42,12 +42,14 @@ const Carrousel = ({ recentSeries }) => {
               <div className="slider">
                 <div className="slider-front">
                   <h1>{serie.name}</h1>
-                  <Link to="/series/:id">
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
-                      alt={serie.name}
-                      className="slider-img"
-                    />
+                  <Link to={`/serie/${serie.id}`} key={index}>
+                    <div onClick={() => setSerieID(serie.id)}>
+                      <img
+                        src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
+                        alt={serie.name}
+                        className="slider-img"
+                      />
+                    </div>
                   </Link>
                 </div>
               </div>
