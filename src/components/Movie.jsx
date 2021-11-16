@@ -11,7 +11,7 @@ const Movie = (movieId) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const fetchDetailMovie = async () => {
-    const url = `https://api.themoviedb.org/3/movie/${movieId.movieId}?api_key=${apiKey}&language=en-US`;
+    const url = `https://api.themoviedb.org/3/movie/${movieId.movieId}?api_key=${apiKey}&language=fr-FR`;
     const response = await fetch(url);
     const searchMovie = await response.json();
 
@@ -33,13 +33,13 @@ const Movie = (movieId) => {
         <div className="left-container">
           <img
             src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`}
-            alt={movieDetail.original_title}
+            alt={movieDetail.title}
             className="movie-poster"
           />
         </div>
         <div className="right-container">
           <div className="main-title">
-            <h1>{movieDetail.original_title} </h1>
+            <h1>{movieDetail.title} </h1>
           </div>
           <div className="right-top">
             {movieDetail.genres?.map((genre, index) => (
@@ -51,11 +51,11 @@ const Movie = (movieId) => {
           </div>
           <div className="right-middle">
             <div className="release">
-              <h4 className="blue-color">Release</h4>
+              <h4 className="blue-color">Sortie</h4>
               <h4>{moment(movieDetail.release_date).format('DD-MM-YYYY')}</h4>
             </div>
             <div className="duration">
-              <h4 className="blue-color">Duration</h4>
+              <h4 className="blue-color">Durée</h4>
               <h4>{movieDetail.runtime} min</h4>
             </div>
             <div className="note">
@@ -72,9 +72,9 @@ const Movie = (movieId) => {
             </div>
             <div className="links">
               <div>
-                Visit the{' '}
+                Visitez le{' '}
                 <a href={movieDetail.homepage} target="_blank" rel="noreferrer">
-                  official website
+                  site officiel
                 </a>
               </div>
             </div>

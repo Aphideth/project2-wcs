@@ -17,7 +17,7 @@ const App = () => {
   const [popularMovies, setPopularMovies] = useState([]);
   const fetchPopularMovies = async () => {
     const data = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=revenue.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=fr-FR&sort_by=revenue.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
     );
     const movies = await data.json();
     setPopularMovies(movies.results);
@@ -29,7 +29,7 @@ const App = () => {
   const [recentMovies, setRecentMovies] = useState([]);
   const fetchRecentMovies = async () => {
     const data2 = await fetch(
-      `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`
+      `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&language=fr-FR`
     );
     const recentMovies = await data2.json();
     setRecentMovies(recentMovies.results);
@@ -41,7 +41,7 @@ const App = () => {
   const [popularSeries, setPopularSeries] = useState([]);
   const fetchPopularSeries = async () => {
     const data3 = await fetch(
-      `https://api.themoviedb.org/3/discover/tv?api_key=5727abed527bf8c8099d66876a9bf967&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate`
+      `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&language=fr-FR&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate`
     );
     const popularSeries = await data3.json();
     setPopularSeries(popularSeries.results);
@@ -53,7 +53,7 @@ const App = () => {
   const [recentSeries, setRecentSeries] = useState([]);
   const fetchRecentSeries = async () => {
     const data4 = await fetch(
-      `https://api.themoviedb.org/3/trending/tv/week?api_key=${apiKey}`
+      `https://api.themoviedb.org/3/trending/tv/week?api_key=${apiKey}&language=fr-FR`
     );
     const recentSeries = await data4.json();
     setRecentSeries(recentSeries.results);

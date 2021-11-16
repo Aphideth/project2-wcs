@@ -36,25 +36,25 @@ const NavBar = ({ popularMovies, setMovieId }) => {
           <li className="navBar-link">
             <Link to="/movies">
               <FontAwesomeIcon className="icon-menu" icon="film" />
-              <span className="string-menu">Movies</span>
+              <span className="string-menu">Films</span>
             </Link>
           </li>
           <li className="navBar-link">
             <Link to="/series">
               <FontAwesomeIcon className="icon-menu" icon="tv" />
-              <span className="string-menu">Series</span>
+              <span className="string-menu">Séries</span>
             </Link>
           </li>
           <li className="navBar-link">
             <Link to="/favorites">
               <FontAwesomeIcon className="icon-menu" icon="heart" />
-              <span className="string-menu">Favorites</span>
+              <span className="string-menu">Favoris</span>
             </Link>
           </li>
           <li className="navBar-link">
             <Link to="/ourteam">
               <FontAwesomeIcon className="icon-menu" icon="users" />
-              <span className="string-menu">Our Team</span>
+              <span className="string-menu">Notre équipe</span>
             </Link>
           </li>
         </ul>

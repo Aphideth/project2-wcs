@@ -37,7 +37,7 @@ function Footer() {
     <div className="footer dark-mode">
       <div className="sources-modal">
         <button className="sources" onClick={() => setOpenModal(true)}>
-          Sources
+          Nos sources
         </button>
         <Modal
           isOpen={openModal}
@@ -60,7 +60,7 @@ function Footer() {
 
       <div className="contact-modal">
         <button className="contact" onClick={() => setOpenModalContact(true)}>
-          Contact
+          Nous Contacter
         </button>
         <Modal
           isOpen={openModalContact}
@@ -90,7 +90,7 @@ function Footer() {
                   type="text"
                   required="required"
                   rows="5"
-                  placeholder="Message"
+                  placeholder="Votre message ici..."
                   name="message"
                 />
               </div>
@@ -98,11 +98,9 @@ function Footer() {
                 type="submit"
                 id="submitBtn"
                 className="submitBtn"
-                onClick={() =>
-                  formSend(`You've sending your message! Thank you!`)
-                }
+                onClick={() => formSend(`Merci de nous avoir contacté!`)}
               >
-                Send
+                Envoyer
               </button>
             </form>
           </div>

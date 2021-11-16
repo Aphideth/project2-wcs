@@ -20,7 +20,7 @@ const OurMember = ({
   memberLinkedIn,
 }) => {
   return (
-    <div className="member">
+    <div className="members">
       <div className="presentation">
         <h2>{memberName}</h2>
         <img src={memberAvatar} alt={memberName} />

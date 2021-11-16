@@ -61,7 +61,7 @@ const Carrousel2 = ({ popularMovies, setMovieId }) => {
         icon="chevron-right"
         onClick={nextSlide}
       />
-      <Title titleName="Movies : the best successes" />
+      <Title titleName="Films : les plus gros succès" />
       <div className="slider-container-2">
         {popularMovies.map((movie, index) => (
           <div
@@ -78,12 +78,12 @@ const Carrousel2 = ({ popularMovies, setMovieId }) => {
                     >
                       <img
                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                        alt={movie.original_title}
+                        alt={movie.title}
                         className="slider-2-img first-img"
                       />
                     </div>
                   </Link>
-                  <h1>{movie.original_title}</h1>
+                  <h1>{movie.title}</h1>
                 </div>
               </div>
             )}
@@ -104,12 +104,12 @@ const Carrousel2 = ({ popularMovies, setMovieId }) => {
                     >
                       <img
                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                        alt={movie.original_title}
+                        alt={movie.title}
                         className="slider-2-img"
                       />
                     </div>
                   </Link>
-                  <h1>{movie.original_title}</h1>
+                  <h1>{movie.title}</h1>
                 </div>
               </div>
             )}
@@ -130,12 +130,12 @@ const Carrousel2 = ({ popularMovies, setMovieId }) => {
                     >
                       <img
                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                        alt={movie.original_title}
+                        alt={movie.title}
                         className="slider-2-img"
                       />
                     </div>
                   </Link>
-                  <h1>{movie.original_title}</h1>
+                  <h1>{movie.title}</h1>
                 </div>
               </div>
             )}
@@ -156,12 +156,12 @@ const Carrousel2 = ({ popularMovies, setMovieId }) => {
                     >
                       <img
                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                        alt={movie.original_title}
+                        alt={movie.title}
                         className="slider-2-img"
                       />
                     </div>
                   </Link>
-                  <h1>{movie.original_title}</h1>
+                  <h1>{movie.title}</h1>
                 </div>
               </div>
             )}
@@ -182,12 +182,12 @@ const Carrousel2 = ({ popularMovies, setMovieId }) => {
                     >
                       <img
                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                        alt={movie.original_title}
+                        alt={movie.title}
                         className="slider-2-img last-img"
                       />
                     </div>
                   </Link>
-                  <h1>{movie.original_title}</h1>
+                  <h1>{movie.title}</h1>
                 </div>
               </div>
             )}
