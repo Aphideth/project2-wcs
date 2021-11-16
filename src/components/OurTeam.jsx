@@ -20,6 +20,12 @@ import shutterisland from '../assets/img/shutterisland.jpg';
 import breakingbad from '../assets/img/breakingbad.jpg';
 import malcolminthemiddle from '../assets/img/malcolminthemiddle.jpg';
 import herocorp from '../assets/img/herocorp.jpg';
+import aboutTime from '../assets/img/aboutTime.jpg';
+import kuzco from '../assets/img/kuzco.jpg';
+import tracks from '../assets/img/tracks.jpg';
+import blackSails from '../assets/img/blackSails.jpg';
+import doctorWho from '../assets/img/doctorWho.jpg';
+import mrRobot from '../assets/img/mrRobot.jpg';
 import './OurTeam.css';
 import OurMember from './OurMember';
 
@@ -46,13 +52,13 @@ const OurTeam = () => {
     {
       name: 'Mathilde',
       avatar: mathilde,
-      presentation: 'Plop',
-      top1film: mathilde,
-      top2film: mathilde,
-      top3film: mathilde,
-      top1serie: mathilde,
-      top2serie: mathilde,
-      top3serie: mathilde,
+      presentation: 'Que le Plop soit avec toi.',
+      top1film: aboutTime,
+      top2film: tracks,
+      top3film: kuzco,
+      top1serie: doctorWho,
+      top2serie: mrRobot,
+      top3serie: blackSails,
       mail: 'mailto:mathildelie@gmail.com',
       github: 'https://github.com/Mathilde-E',
       linkedin: 'https://www.linkedin.com/in/mathilde-elie-142743204/',

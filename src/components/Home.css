@@ -1,6 +1,7 @@
 body {
   background-color: var(--beige-color);
 }
+
 .Home {
   height: 850px;
   background-image: url('../assets/img/cinema.png');
@@ -8,6 +9,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .questionnaire {
   display: flex;
   align-items: center;
@@ -15,6 +17,7 @@ body {
   padding-top: 8.5em;
   margin-bottom: 2rem;
 }
+
 .colonne1 {
   display: flex;
   flex-direction: column;
@@ -22,10 +25,12 @@ body {
   margin: 2rem;
   padding: 2rem;
 }
+
 .colonne1 img {
   width: 100px;
   padding: 1rem;
 }
+
 .colonne2 {
   display: flex;
   flex-direction: column;
@@ -33,36 +38,43 @@ body {
   margin: 2rem;
   padding: 2rem;
 }
+
 .colonne2 img {
   width: 100px;
   padding: 1rem;
 }
+
 .colonne3 {
   display: flex;
   flex-direction: column;
   margin: 2rem;
   padding: 2rem;
 }
+
 .colonne3 img {
   width: 100px;
   padding: 2rem;
 }
+
 .clic-to-show {
   display: flex;
   text-align: center;
   justify-content: center;
 }
+
 .show-result,
 .show-retry {
   display: flex;
   text-align: center;
   border-radius: 10px;
 }
+
 .hide-result,
 .hide-retry {
   display: none;
   text-align: center;
 }
+
 .api-result {
   display: flex;
   flex-wrap: wrap;
@@ -74,12 +86,15 @@ body {
   margin-left: 28%;
   overflow-x: auto;
 }
+
 .hide-api {
   display: none;
 }
+
 .movie-dispatch {
   width: 120px;
 }
+
 .test-title-api {
   display: flex;
   align-items: center;
@@ -87,13 +102,16 @@ body {
   height: 45px;
   font-size: 0.8rem;
 }
+
 .test-img-api {
   width: 100px;
 }
+
 .isChecked {
   border: 2px solid white;
   border-radius: 50%;
 }
+
 .notChecked {
   border: none;
 }
