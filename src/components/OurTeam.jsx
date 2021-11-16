@@ -8,7 +8,6 @@ import element from '../assets/img/element.png';
 import leon from '../assets/img/leon.png';
 import bigFish from '../assets/img/bigFish.jpg';
 import gameOfThrones from '../assets/img/gameOfThrones.jpeg';
-import malcolm from '../assets/img/malcolm.jpg';
 import shigekiNoKyojin from '../assets/img/shigekiNoKyojin.jpg';
 import chihiro from '../assets/img/chihiro.jpg';
 import daria from '../assets/img/daria.jpg';
@@ -16,6 +15,11 @@ import futurama from '../assets/img/futurama.jpg';
 import pulpfiction from '../assets/img/pulpfiction.jpg';
 import scrubs from '../assets/img/scrubs.jpg';
 import xmen from '../assets/img/xmen.jpg';
+import matrix from '../assets/img/matrix.jpg';
+import shutterisland from '../assets/img/shutterisland.jpg';
+import breakingbad from '../assets/img/breakingbad.jpg';
+import malcolminthemiddle from '../assets/img/malcolminthemiddle.jpg';
+import herocorp from '../assets/img/herocorp.jpg';
 import './OurTeam.css';
 import OurMember from './OurMember';
 
@@ -62,7 +66,7 @@ const OurTeam = () => {
       top3film: bigFish,
       top1serie: gameOfThrones,
       top2serie: shigekiNoKyojin,
-      top3serie: malcolm,
+      top3serie: malcolminthemiddle,
       mail: 'mailto:kevinbruno90@gmail.com',
       github: 'https:github.com/KvnBrn',
       linkedin: 'https://www.linkedin.com/in/kevin-bruno-983a6417b/',
@@ -71,12 +75,12 @@ const OurTeam = () => {
       name: 'Giovanni',
       avatar: giovanni,
       presentation: 'Plop',
-      top1film: giovanni,
-      top2film: giovanni,
-      top3film: giovanni,
-      top1serie: giovanni,
-      top2serie: giovanni,
-      top3serie: giovanni,
+      top1film: element,
+      top2film: matrix,
+      top3film: shutterisland,
+      top1serie: breakingbad,
+      top2serie: malcolminthemiddle,
+      top3serie: herocorp,
       mail: 'mailto:rossi.web@gmail.com',
       github: 'https://github.com/eths09',
       linkedin: 'https://www.linkedin.com/in/giovanni-rossi-4b0b98221/',
