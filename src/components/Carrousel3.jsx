@@ -10,7 +10,7 @@ import Title from './Title';
 import './Carrousel3.css';
 
 library.add(faChevronRight, faChevronLeft);
-const Carrousel3 = ({ popularSeries }) => {
+const Carrousel3 = ({ popularSeries, setSerieID }) => {
   const [current, setCurrent] = useState(0);
   const [firstPrevCurrent, setFirstPrevCurrent] = useState(18);
   const [prevCurrent, setPrevCurrent] = useState(19);
@@ -71,12 +71,14 @@ const Carrousel3 = ({ popularSeries }) => {
             {index === firstPrevCurrent && (
               <div className="slider-3">
                 <div className="slider-front-3 first-prev">
-                  <Link to="/series/:id">
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
-                      alt={serie.name}
-                      className="slider-3-img first-img"
-                    />
+                  <Link to={`/serie/${serie.id}`} key={index}>
+                    <div onClick={() => setSerieID(serie.id)}>
+                      <img
+                        src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
+                        alt={serie.name}
+                        className="slider-3-img first-img"
+                      />
+                    </div>
                   </Link>
                   <h1>{serie.name}</h1>
                 </div>
@@ -92,12 +94,14 @@ const Carrousel3 = ({ popularSeries }) => {
             {index === prevCurrent && (
               <div className="slider-3">
                 <div className="slider-front-3">
-                  <Link to="/series/:id">
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
-                      alt={serie.name}
-                      className="slider-3-img"
-                    />
+                  <Link to={`/serie/${serie.id}`} key={index}>
+                    <div onClick={() => setSerieID(serie.id)}>
+                      <img
+                        src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
+                        alt={serie.name}
+                        className="slider-3-img"
+                      />
+                    </div>
                   </Link>
                   <h1>{serie.name}</h1>
                 </div>
@@ -113,12 +117,14 @@ const Carrousel3 = ({ popularSeries }) => {
             {index === current && (
               <div className="slider-3">
                 <div className="slider-front-3">
-                  <Link to="/series/:id">
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
-                      alt={serie.name}
-                      className="slider-3-img"
-                    />
+                  <Link to={`/serie/${serie.id}`} key={index}>
+                    <div onClick={() => setSerieID(serie.id)}>
+                      <img
+                        src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
+                        alt={serie.name}
+                        className="slider-3-img"
+                      />
+                    </div>
                   </Link>
                   <h1>{serie.name}</h1>
                 </div>
@@ -134,12 +140,14 @@ const Carrousel3 = ({ popularSeries }) => {
             {index === nextCurrent && (
               <div className="slider-3">
                 <div className="slider-front-3">
-                  <Link to="/series/:id">
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
-                      alt={serie.name}
-                      className="slider-3-img"
-                    />
+                  <Link to={`/serie/${serie.id}`} key={index}>
+                    <div onClick={() => setSerieID(serie.id)}>
+                      <img
+                        src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
+                        alt={serie.name}
+                        className="slider-3-img"
+                      />
+                    </div>
                   </Link>
                   <h1>{serie.name}</h1>
                 </div>
@@ -155,12 +163,14 @@ const Carrousel3 = ({ popularSeries }) => {
             {index === lastNextCurrent && (
               <div className="slider-3">
                 <div className="slider-front-3 last-prev">
-                  <Link to="/series/:id">
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
-                      alt={serie.name}
-                      className="slider-3-img last-img"
-                    />
+                  <Link to={`/serie/${serie.id}`} key={index}>
+                    <div onClick={() => setSerieID(serie.id)}>
+                      <img
+                        src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
+                        alt={serie.name}
+                        className="slider-3-img last-img"
+                      />
+                    </div>
                   </Link>
                   <h1>{serie.name}</h1>
                 </div>

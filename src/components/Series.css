@@ -32,6 +32,7 @@ body {
 .link {
   text-decoration: none;
   color: #164059;
+  cursor: pointer;
 }
 
 .m_overview {

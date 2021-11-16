@@ -4,14 +4,15 @@
   color: var(--beige-color);
   background-color: rgba(0, 0, 0, 0.9);
 }
-.main-container button {
-  color: black;
-  background-color: var(--beige-color);
+.main-container a {
+  text-decoration: none;
+  color: var(--lightblue-color);
   cursor: pointer;
 }
-.main-container button a {
-  text-decoration: none;
-  color: black;
+.main-container a:hover {
+  color: var(--lightblue-color);
+  background-color: transparent;
+  text-shadow: 0 0 5px var(--lightblue-color), 0 0 10px var(--lightblue-color), 0 0 15px var(--lightblue-color)
 }
 .movie-poster {
   width: 150px;
@@ -39,6 +40,10 @@
 .right-top h3 {
   padding-right: 0.5rem;
   color: var(--lightblue-color);
+}
+.favorite {
+  width: fit-content;
+  cursor: pointer;
 }
 .isFavorite {
   width: 40px;
@@ -73,7 +78,8 @@
   display: flex;
   flex-direction: column;
   padding: 0.3rem;
-  border: 1px solid white;
+  border: 1px solid var(--lightblue-color);
+  box-shadow: 2px 2px 7px 1px var(--lightblue-color);
   border-radius: 8px;
 }
 .right-bottom h4 {
@@ -88,7 +94,8 @@
   margin-bottom: 3rem;
   margin-left: -10.3rem;
   padding: 0.5rem 0.5rem 2rem 0.5rem;
-  border: 1px solid white;
+  border: 1px solid var(--lightblue-color);
+  box-shadow: 2px 2px 7px 1px var(--lightblue-color);
   border-radius: 10px;
 }
 .links {
@@ -98,11 +105,10 @@
   display: flex;
   flex-direction: row-reverse;
   margin-top: 2rem;
-}
-.close-card button {
-  font-size: 1.3rem;
-  font-weight: bolder;
-  color: var(--red-color);
+  width: 40px;
+  height: 40px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/c/c0/Circular_arrow-red.svg");
+  background-size: 100%;
 }
 
 @media screen and (min-width: 426px) {
@@ -210,9 +216,18 @@
   .main-title {
     width: 55vw;
   }
+  .right-container {
+    font-size: 1.2rem;
+  }
+  .right-bottom {
+    font-size: 1.2rem;
+  }
+  .main-container a {
+    font-size: 1.2rem;
+  }
   .close-card {
     display: flex;
     flex-direction: row-reverse;
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
 }

@@ -54,6 +54,7 @@ input:focus {
 
 .dataItem p {
   margin: 0.2rem;
+  text-decoration: underline var(--blue-color);
 }
 
 .dataItem p:hover {

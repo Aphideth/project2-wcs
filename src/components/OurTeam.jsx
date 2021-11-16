@@ -10,6 +10,12 @@ import bigFish from '../assets/img/bigFish.jpg';
 import gameOfThrones from '../assets/img/gameOfThrones.jpeg';
 import malcolm from '../assets/img/malcolm.jpg';
 import shigekiNoKyojin from '../assets/img/shigekiNoKyojin.jpg';
+import chihiro from '../assets/img/chihiro.jpg';
+import daria from '../assets/img/daria.jpg';
+import futurama from '../assets/img/futurama.jpg';
+import pulpfiction from '../assets/img/pulpfiction.jpg';
+import scrubs from '../assets/img/scrubs.jpg';
+import xmen from '../assets/img/xmen.jpg';
 import './OurTeam.css';
 import OurMember from './OurMember';
 import Title from './Title';
@@ -24,12 +30,12 @@ const OurTeam = () => {
       name: 'Aphideth',
       avatar: aphideth,
       presentation: 'Plop',
-      top1film: aphideth,
-      top2film: aphideth,
-      top3film: aphideth,
-      top1serie: aphideth,
-      top2serie: aphideth,
-      top3serie: aphideth,
+      top1film: pulpfiction,
+      top2film: chihiro,
+      top3film: xmen,
+      top1serie: scrubs,
+      top2serie: futurama,
+      top3serie: daria,
       mail: 'mailto:aphideth.dev@gmail.com',
       github: 'https://github.com/Aphideth',
       linkedin: 'https://www.linkedin.com/in/aphidethp/',
