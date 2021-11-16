@@ -66,7 +66,7 @@ const Home = ({ popularMovies, recentMovies }) => {
   };
 
   return (
-    <div>
+    <div className="Home">
       <div className="questionnaire">
         <div className={showApiResult ? 'hide-api' : 'api-result'}>
           <div className="colonne1">
