@@ -54,7 +54,7 @@
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/35/Emoji_u2665.svg");
   background-size: 100%;
   align-self: flex-start;
-  margin-bottom: 4rem;
+  margin-bottom: 7rem;
 }
 .notFavorite {
   width: 40px;
@@ -62,7 +62,7 @@
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/52/Heart_icon_red_hollow.svg");
   background-size: 100%;
   align-self: flex-start;
-  margin-bottom: 4rem;
+  margin-bottom: 7rem;
 }
 .right-middle {
   display: flex;

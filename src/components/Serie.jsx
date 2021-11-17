@@ -199,7 +199,7 @@ const Serie = (serieId) => {
             <div className={suggestions ? 'showSimilar' : 'noSimilar'}>
               {similarSerie?.map((similar, index) => (
                 <div key={index}>
-                  <Link to={`/serie/${similar.id}`} key={index}>
+                  <Link to={`/serie/${similar.id}`}>
                     <div onClick={() => serieId}>
                       <img
                         src={`https://image.tmdb.org/t/p/w500/${similar.poster_path}`}

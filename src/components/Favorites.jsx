@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import apiKey from '../API_KEY';
+import { NavLink as Link } from 'react-router-dom';
 import './Favorites.css';
 
-const Favorites = () => {
+const Favorites = ({ setSerieID, setMovieId }) => {
   const [favMovie, setFavMovie] = useState([]);
   const [favSerie, setFavSerie] = useState([]);
 
@@ -78,43 +79,57 @@ const Favorites = () => {
   };
 
   return (
-    <div className="Favorites">
+    <div className="favorites">
       <div className="fav-movies">
+        <h2>Vos films favoris</h2>
         {favMovie && favMovie.length > 0 ? (
           favMovie?.map((movie, index) => (
             <div className="favorite-movie-card" key={index}>
               <h4>{movie.title}</h4>
-              <img
-                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                alt={movie.title}
-                className="fav-movie-poster"
-              />
-              <button onClick={() => deleteFromWishList(movie.id)}>
+              <Link to={`/movie/${movie.id}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                  alt={movie.title}
+                  className="fav-movie-poster"
+                  onClick={() => setMovieId(movie.id)}
+                />
+              </Link>
+              <button
+                className="overlay"
+                onClick={() => deleteFromWishList(movie.id)}
+              >
                 Supprimer le favoris
               </button>
             </div>
           ))
         ) : (
-          <p>no wishlist available</p>
+          <p>{`Vous n'avez pas de film favoris`}</p>
         )}
       </div>
       <div className="fav-series">
+        <h2>Vos séries favorites</h2>
         {favSerie && favSerie.length > 0 ? (
           favSerie?.map((serie, index) => (
             <div className="favorite-serie-card" key={index}>
               <h4>{serie.name}</h4>
-              <img
-                src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
-                alt={serie.name}
-                className="fav-serie-poster"
-              />
-              <button onClick={() => deleteFromSerieList(serie.id)}>
+              <Link to={`/serie/${serie.id}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
+                  alt={serie.name}
+                  className="fav-serie-poster"
+                  onClick={() => setSerieID(serie.id)}
+                />
+              </Link>
+              <button
+                className="overlay"
+                onClick={() => deleteFromSerieList(serie.id)}
+              >
                 Supprimer le favoris
               </button>
             </div>
           ))
         ) : (
-          <p>no wishlist available</p>
+          <p>{`Vous n'avez pas de série favorite`}</p>
         )}
       </div>
     </div>
