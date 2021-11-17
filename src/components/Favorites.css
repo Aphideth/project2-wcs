@@ -1,0 +1,73 @@
+.favorites {
+  padding: 1rem;
+}
+.favorites h2 {
+  width: 100vw;
+  text-align: center;
+  margin: 0;
+  padding: 0.83rem 0;
+  color: var(--beige-color);
+  border-bottom: 1px solid var(--lightblue-color);
+  box-shadow: 2px 2px 7px 1px var(--lightblue-color);
+  border-radius: 10px;
+}
+.favorites h4 {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 45px;
+  margin: 0;
+  padding-bottom: 1em;
+  color: var(--beige-color);
+}
+.favorites button {
+  width: 150px;
+  height: 30px;
+  margin-top: -1.8rem;
+  border: solid 1px var(--red-color);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  opacity: 0.8;
+  background: var(--red-color);
+  color: antiquewhite;
+  z-index: 1;
+}
+.favorites p {
+  color: var(--beige-color);
+}
+.fav-movies, .fav-series {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1rem 0;
+  border: 1px solid var(--lightblue-color);
+  box-shadow: 2px 2px 7px 1px var(--lightblue-color);
+  border-radius: 10px;
+  background-color: rgba(17, 6, 6, 0.7)
+}
+.favorite-movie-card, .favorite-serie-card {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
+}
+.fav-movie-poster, .fav-serie-poster {
+  display: flex;
+  position: relative;
+  width: 150px;
+  border-radius: 10px;
+  transition: transform 0.2s;
+  transform: scalet(1.1);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1025px) {
+ .favorites {
+   width: 88vw;
+ }
+}

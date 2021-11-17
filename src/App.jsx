@@ -97,7 +97,7 @@ const App = () => {
               <Serie serieId={serieId} />
             </Route>
             <Route path="/Favorites">
-              <Favorites />
+              <Favorites setMovieId={setMovieId} setSerieID={setSerieID} />
             </Route>
             <Route path="/OurTeam">
               <OurTeam />
