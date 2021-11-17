@@ -8,6 +8,7 @@ import './Serie.css';
 const Serie = (serieId) => {
   const [serieDetail, setSerieDetail] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [serieList, setSerieList] = useState([]);
 
   const fetchDetailSerie = async () => {
     const url = `https://api.themoviedb.org/3/tv/${serieId.serieId}?api_key=${apiKey}&language=fr-FR`;
@@ -49,6 +50,41 @@ const Serie = (serieId) => {
   const [suggestions, setSuggestions] = React.useState(false);
   const togSuggestions = () => setSuggestions(!suggestions);
 
+  //On teste les favoris ci-dessous
+
+  const getFavSeries = () => {
+    const favoriteSerieList = localStorage.getItem('serielist');
+    favoriteSerieList
+      ? setSerieList(JSON.parse(favoriteSerieList))
+      : localStorage.setItem('serielist', JSON.stringify([]));
+  };
+
+  const addToSerieList = (serieId) => {
+    const favoriteSerieList = localStorage.getItem('serielist');
+    const newfavoriteSerieList = favoriteSerieList
+      ? JSON.parse(favoriteSerieList)
+      : [];
+    if (!newfavoriteSerieList.includes(serieId)) {
+      newfavoriteSerieList.push(serieId);
+    }
+    localStorage.setItem('serielist', JSON.stringify(newfavoriteSerieList));
+    getFavSeries();
+  };
+
+  const deleteFromSerieList = (serieId) => {
+    const favoriteSerieList = localStorage.getItem('serielist');
+    const newfavoriteSerieList = favoriteSerieList
+      ? JSON.parse(favoriteSerieList)
+      : [];
+    const newSerieList = newfavoriteSerieList.filter((id) => id !== serieId);
+    localStorage.setItem('serielist', JSON.stringify(newSerieList));
+    getFavSeries();
+  };
+
+  useEffect(() => {
+    getFavSeries();
+  }, []);
+
   return (
     <div className="serie-card">
       <div className="serie-main-container">
@@ -69,9 +105,17 @@ const Serie = (serieId) => {
             ))}
           </div>
           <div className="serie-favorite" onClick={handleClickFavorite}>
-            <div
-              className={isFavorite ? 'serie-isFavorite' : 'serie-notFavorite'}
-            />
+            {serieList.includes(serieId.serieId) ? (
+              <div
+                className="serie-isFavorite"
+                onClick={() => deleteFromSerieList(serieId.serieId)}
+              />
+            ) : (
+              <div
+                className="serie-notFavorite"
+                onClick={() => addToSerieList(serieId.serieId)}
+              />
+            )}
           </div>
           <div className="serie-right-middle">
             <div className="serie-release">

@@ -40,8 +40,6 @@ const Movie = (movieId) => {
     const favoriteList = localStorage.getItem('wishlist');
     const newFavoriteList = favoriteList ? JSON.parse(favoriteList) : [];
     if (!newFavoriteList.includes(movieId)) {
-      console.log(movieId);
-      console.log(newFavoriteList);
       newFavoriteList.push(movieId);
     }
     localStorage.setItem('wishlist', JSON.stringify(newFavoriteList));
