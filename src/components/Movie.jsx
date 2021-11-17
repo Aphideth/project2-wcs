@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import apiKey from '../API_KEY';
 import './Movie.css';
-
-const apiKey = '5727abed527bf8c8099d66876a9bf967';
 
 const Movie = (movieId) => {
   const [movieDetail, setMovieDetail] = useState([]);
@@ -31,31 +30,35 @@ const Movie = (movieId) => {
   //On teste les favoris ci-dessous
 
   const getFavorites = () => {
-    const favoriteList = localStorage.getItem('wishList');
+    const favoriteList = localStorage.getItem('wishlist');
     favoriteList
       ? setWishList(JSON.parse(favoriteList))
-      : localStorage.setItem('wishList', JSON.stringify([]));
+      : localStorage.setItem('wishlist', JSON.stringify([]));
   };
-  console.log(wishList);
+
   const addToWishList = (movieId) => {
-    const favoriteList = localStorage.getItem('wishList');
+    const favoriteList = localStorage.getItem('wishlist');
     const newFavoriteList = favoriteList ? JSON.parse(favoriteList) : [];
     if (!newFavoriteList.includes(movieId)) {
       console.log(movieId);
       console.log(newFavoriteList);
       newFavoriteList.push(movieId);
     }
-    localStorage.setItem('wishList', JSON.stringify(newFavoriteList));
+    localStorage.setItem('wishlist', JSON.stringify(newFavoriteList));
     getFavorites();
   };
 
   const deleteFromWishList = (movieId) => {
-    const favoriteList = localStorage.getItem('wishList');
+    const favoriteList = localStorage.getItem('wishlist');
     const newFavoriteList = favoriteList ? JSON.parse(favoriteList) : [];
     const newList = newFavoriteList.filter((id) => id !== movieId);
-    localStorage.setItem('wishList', JSON.stringify(newList));
+    localStorage.setItem('wishlist', JSON.stringify(newList));
     getFavorites();
   };
+
+  useEffect(() => {
+    getFavorites();
+  }, []);
 
   return (
     <div className="movie-card">
@@ -77,14 +80,17 @@ const Movie = (movieId) => {
             ))}
           </div>
           <div className="favorite" onClick={handleClickIsFavorite}>
-            <div
-              className={!isFavorite ? 'isFavorite-hide' : 'isFavorite'}
-              onClick={() => addToWishList(movieId)}
-            />
-            <div
-              className={!isFavorite ? 'notFavorite' : 'notFavorite-hide'}
-              onClick={() => deleteFromWishList(movieId)}
-            />
+            {wishList.includes(movieId.movieId) ? (
+              <div
+                className="isFavorite"
+                onClick={() => deleteFromWishList(movieId.movieId)}
+              />
+            ) : (
+              <div
+                className="notFavorite"
+                onClick={() => addToWishList(movieId.movieId)}
+              />
+            )}
           </div>
           <div className="right-middle">
             <div className="release">

@@ -11,8 +11,8 @@ import Favorites from './components/Favorites';
 import OurTeam from './components/OurTeam';
 import Footer from './components/Footer';
 import Curtain from './components/Curtain';
+import apiKey from './API_KEY';
 
-const apiKey = '5727abed527bf8c8099d66876a9bf967';
 const App = () => {
   const [popularMovies, setPopularMovies] = useState([]);
   const fetchPopularMovies = async () => {

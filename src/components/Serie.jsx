@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import apiKey from '../API_KEY';
 import './Serie.css';
-
-const apiKey = '5727abed527bf8c8099d66876a9bf967';
 
 const Serie = (serieId) => {
   const [serieDetail, setSerieDetail] = useState([]);
