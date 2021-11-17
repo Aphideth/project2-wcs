@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import beer from '../assets/img/beer.png';
-import fauteuil from '../assets/img/fauteuil.png';
+import armChair from '../assets/img/armChair.png';
 import couch from '../assets/img/couch.png';
 import pizza from '../assets/img/pizza.png';
 import popcorn from '../assets/img/popcorn.png';
@@ -67,8 +67,18 @@ const Home = ({ popularMovies, recentMovies }) => {
 
   return (
     <div className="Home">
-      <div className="questionnaire">
-        <div className={showApiResult ? 'hide-api' : 'api-result'}>
+      <div
+        className={showApiResult ? 'questionnaire-hide' : 'questionnaire-show'}
+      >
+        <div className="home-title">
+          <h2>Veuillez faire votre choix :</h2>
+          <h3>{`Sélectionnez une image par ligne`}</h3>
+          <h3>
+            Cliquez que le bouton pour afficher votre recommandation de films
+            personnalisés
+          </h3>
+        </div>
+        <div className="questionnaire-container">
           <div className="colonne1">
             <div>
               <label>
@@ -115,8 +125,8 @@ const Home = ({ popularMovies, recentMovies }) => {
               <label>
                 <div className={armChairChecked ? 'isChecked' : 'notChecked'}>
                   <img
-                    src={fauteuil}
-                    alt="fauteuil"
+                    src={armChair}
+                    alt="armChair"
                     type="checkbox"
                     couchChecked={armChairChecked}
                     onClick={handleChangeArmChair}
@@ -155,40 +165,43 @@ const Home = ({ popularMovies, recentMovies }) => {
       </div>
       <div className="clic-to-show">
         <button
-          className={showApiResult ? 'hide-result' : 'show-result'}
+          className={showApiResult ? 'hide-button' : 'show-button'}
           onClick={handleShowApiResult}
         >
-          <p>Show your result</p>
+          <p>RESULTAT</p>
         </button>
+
         <button
-          className={showApiResult ? 'show-retry' : 'hide-retry'}
+          className={showApiResult ? 'show-button' : 'hide-button'}
           onClick={handleShowApiResult}
         >
-          <p> Retry</p>
+          <p>RECOMMENCER</p>
         </button>
       </div>
-      <div className={showApiResult ? 'api-result' : 'hide-api'}>
-        {firstApi > secondApi
-          ? popularMovies?.map((movie, index) => (
-              <div className="movie-dispatch" key={index}>
-                <h1 className="test-title-api">{movie.original_title}</h1>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                  alt={movie.original_title}
-                  className="test-img-api"
-                />
-              </div>
-            ))
-          : recentMovies?.map((movie, index) => (
-              <div className="movie-dispatch" key={index}>
-                <h1 className="test-title-api">{movie.original_title}</h1>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                  alt={movie.original_title}
-                  className="test-img-api"
-                />
-              </div>
-            ))}
+      <div className="show-results">
+        <div className={showApiResult ? 'api-result' : 'hide-api'}>
+          {firstApi > secondApi
+            ? popularMovies?.map((movie, index) => (
+                <div className="movie-dispatch" key={index}>
+                  <h1 className="test-title-api">{movie.original_title}</h1>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                    alt={movie.original_title}
+                    className="test-img-api"
+                  />
+                </div>
+              ))
+            : recentMovies?.map((movie, index) => (
+                <div className="movie-dispatch" key={index}>
+                  <h1 className="test-title-api">{movie.original_title}</h1>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                    alt={movie.original_title}
+                    className="test-img-api"
+                  />
+                </div>
+              ))}
+        </div>
       </div>
     </div>
   );
