@@ -61,10 +61,14 @@ const Home = ({ popularMovies, recentMovies }) => {
   }
 
   const [showApiResult, setShowApiResult] = useState(false);
+
+  let disabled;
+  if (firstApi + secondApi < 3) {
+    disabled = true;
+  }
   const handleShowApiResult = () => {
     setShowApiResult(!showApiResult);
   };
-
   return (
     <div className="Home">
       <div
@@ -167,6 +171,7 @@ const Home = ({ popularMovies, recentMovies }) => {
         <button
           className={showApiResult ? 'hide-button' : 'show-button'}
           onClick={handleShowApiResult}
+          disabled={disabled}
         >
           <p>RESULTAT</p>
         </button>
