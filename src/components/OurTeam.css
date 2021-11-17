@@ -7,10 +7,11 @@
 }
 .profils {
   height: 600px;
-  background-image: url("https://www.okiwoki.com/images/produits/parodies-cinema/i-want-you-pull-enfant-noir-h-13-14-ans_2.jpg");
+  background-image: url("../assets/img/vadorwantsyou3.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: black;
 }
 .profil {
   display: flex;
@@ -119,18 +120,46 @@
     font-size: 2.4rem;
   }
   .imgAvatar {
+    width: 11em;
     margin: 1rem 1rem;
   }
 }
 
 @media screen and (min-width: 1025px) {
   .profils {
-    height: auto;
+    height: 1440px;
+  }
+  .profils h2 {
+    padding-top: 5rem;
+    font-size: 3rem;
   }
   .profil {
-    justify-content: space-evenly;
+    justify-content: start;
+    padding-left: 10rem;
   }
   .imgAvatar {
+    width: 13em;
+    margin: 10rem 2rem;
+  }
+}
 
+@media screen and (min-width: 1441px) {
+  .profils {
+    background-size: 680px;
+    background-repeat: no-repeat;
+  }
+  .profils h2 {
+    padding-top: 10rem;
+    margin: 0;
+  }
+  .profil {
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    margin-top: 10rem;
+  }
+  .imgAvatar {
+    margin: 0;
+    margin: 5rem 20em;
   }
 }

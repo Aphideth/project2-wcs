@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
+import apiKey from '../API_KEY';
 import './Serie.css';
-
-const apiKey = '5727abed527bf8c8099d66876a9bf967';
 
 const Serie = (serieId) => {
   const [serieDetail, setSerieDetail] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [serieList, setSerieList] = useState([]);
 
   const fetchDetailSerie = async () => {
-    const url = `https://api.themoviedb.org/3/tv/${serieId.serieId}?api_key=${apiKey}&language=en-US`;
+    const url = `https://api.themoviedb.org/3/tv/${serieId.serieId}?api_key=${apiKey}&language=fr-FR`;
     const response = await fetch(url);
     const searchSerie = await response.json();
     if (searchSerie) {
@@ -21,20 +22,20 @@ const Serie = (serieId) => {
     fetchDetailSerie(serieId.serieId);
   }, [serieId.serieId]);
 
-  // const [similarSerie, setSimilarSerie] = useState([]);
+  const [similarSerie, setSimilarSerie] = useState([]);
 
-  // const fetchSimilarSerie = async () => {
-  //   const datas = `https://api.themoviedb.org/3/tv/${serieId.serieId}/similar?api_key=${apiKey}&language=en-US&page=1`;
-  //   const responseSimilar = await fetch(datas);
-  //   const similarResult = await responseSimilar.json();
-  //   if (similarResult) {
-  //     setSimilarSerie(similarResult);
-  //   }
-  //   console.log(similarSerie);
-  // };
-  // useEffect(() => {
-  //   fetchSimilarSerie();
-  // }, []);
+  const fetchSimilarSerie = async () => {
+    const datas = `https://api.themoviedb.org/3/tv/${serieId.serieId}/similar?api_key=${apiKey}&language=en-US&page=1`;
+    const responseSimilar = await fetch(datas);
+    const similarResult = await responseSimilar.json();
+    if (similarResult.results) {
+      setSimilarSerie(similarResult.results);
+    }
+  };
+
+  useEffect(() => {
+    fetchSimilarSerie();
+  }, []);
 
   const handleClickFavorite = () => {
     setIsFavorite(!isFavorite);
@@ -48,6 +49,41 @@ const Serie = (serieId) => {
 
   const [suggestions, setSuggestions] = React.useState(false);
   const togSuggestions = () => setSuggestions(!suggestions);
+
+  //On teste les favoris ci-dessous
+
+  const getFavSeries = () => {
+    const favoriteSerieList = localStorage.getItem('serielist');
+    favoriteSerieList
+      ? setSerieList(JSON.parse(favoriteSerieList))
+      : localStorage.setItem('serielist', JSON.stringify([]));
+  };
+
+  const addToSerieList = (serieId) => {
+    const favoriteSerieList = localStorage.getItem('serielist');
+    const newfavoriteSerieList = favoriteSerieList
+      ? JSON.parse(favoriteSerieList)
+      : [];
+    if (!newfavoriteSerieList.includes(serieId)) {
+      newfavoriteSerieList.push(serieId);
+    }
+    localStorage.setItem('serielist', JSON.stringify(newfavoriteSerieList));
+    getFavSeries();
+  };
+
+  const deleteFromSerieList = (serieId) => {
+    const favoriteSerieList = localStorage.getItem('serielist');
+    const newfavoriteSerieList = favoriteSerieList
+      ? JSON.parse(favoriteSerieList)
+      : [];
+    const newSerieList = newfavoriteSerieList.filter((id) => id !== serieId);
+    localStorage.setItem('serielist', JSON.stringify(newSerieList));
+    getFavSeries();
+  };
+
+  useEffect(() => {
+    getFavSeries();
+  }, []);
 
   return (
     <div className="serie-card">
@@ -69,17 +105,25 @@ const Serie = (serieId) => {
             ))}
           </div>
           <div className="serie-favorite" onClick={handleClickFavorite}>
-            <div
-              className={isFavorite ? 'serie-isFavorite' : 'serie-notFavorite'}
-            />
+            {serieList.includes(serieId.serieId) ? (
+              <div
+                className="serie-isFavorite"
+                onClick={() => deleteFromSerieList(serieId.serieId)}
+              />
+            ) : (
+              <div
+                className="serie-notFavorite"
+                onClick={() => addToSerieList(serieId.serieId)}
+              />
+            )}
           </div>
           <div className="serie-right-middle">
             <div className="serie-release">
-              <h4 className="serie-blue-color">Release</h4>
-              <h4>{serieDetail.first_air_date}</h4>
+              <h4 className="serie-blue-color">Sortie</h4>
+              <h4>{moment(serieDetail.first_air_date).format('DD-MM-YYYY')}</h4>
             </div>
             <div className="serie-duration">
-              <h4 className="serie-blue-color">Duration</h4>
+              <h4 className="serie-blue-color">Durée</h4>
               <h4>
                 {serieDetail.episode_run_time?.find((time) => time < 60)} min
               </h4>
@@ -105,13 +149,13 @@ const Serie = (serieId) => {
                 ))}
               </div>
               <li onClick={togSynopsis}>
-                <h4>Overview</h4>
+                <h4>Résumé</h4>
               </li>
               <li onClick={togSaisons}>
-                <h4>Seasons</h4>
+                <h4>Saisons</h4>
               </li>
               <li onClick={togSuggestions}>
-                <h4>Similars</h4>
+                <h4>Similaires</h4>
               </li>
             </ul>
             <div className={synopsis ? 'showSyno' : 'noSyno'}>
@@ -125,10 +169,10 @@ const Serie = (serieId) => {
             <div className={saisons ? 'showSaisons' : 'noSaisons'}>
               <div className="serie-total-saison-container">
                 <div className="serie-total-saison">
-                  <h4 className="serie-blue-color">All seasons : </h4>
+                  <h4 className="serie-blue-color">Toutes les saisons : </h4>
                   <h4> {serieDetail.number_of_seasons}</h4>
                   <h4 className="serie-blue-color">
-                    <span>/</span> {''} All episodes :{' '}
+                    <span>/</span> {''} Tous les épisodes :{' '}
                   </h4>
                   <h4> {serieDetail.number_of_episodes}</h4>
                 </div>
@@ -136,11 +180,11 @@ const Serie = (serieId) => {
               {serieDetail.seasons?.map((season, index) => (
                 <div className="serie-season" key={index}>
                   <div className="serie-saison-number">
-                    <h4 className="serie-blue-color">Season n°</h4>
+                    <h4 className="serie-blue-color">Saison n°</h4>
                     <h4> {season.season_number}</h4>
                   </div>
                   <div className="serie-episode-count">
-                    <h4 className="serie-blue-color">{`Numbers of episodes : `}</h4>
+                    <h4 className="serie-blue-color">{`Nombre d'épisodes : `}</h4>
                     <h4> {season.episode_count}</h4>
                   </div>
                   <img
@@ -152,13 +196,21 @@ const Serie = (serieId) => {
                 </div>
               ))}
             </div>
-            {/* <div className={suggestions ? 'showSimilar' : 'noSimilar'}>
+            <div className={suggestions ? 'showSimilar' : 'noSimilar'}>
               {similarSerie?.map((similar, index) => (
                 <div key={index}>
-                  <h4>{similar.name}</h4>
+                  <Link to={`/serie/${similar.id}`} key={index}>
+                    <div onClick={() => serieId}>
+                      <img
+                        src={`https://image.tmdb.org/t/p/w500/${similar.poster_path}`}
+                        alt={similar.name}
+                        className="similar-serie-img"
+                      />
+                    </div>
+                  </Link>
                 </div>
               ))}
-            </div> */}
+            </div>
           </div>
           <Link to="/series">
             <div className="serie-close-container">
@@ -176,36 +228,3 @@ Serie.propTypes = {
 };
 
 export default Serie;
-
-// const [synopsis, setSynopsis] = React.useState(true);
-// const togSynopsis = () => setSynopsis(!synopsis);
-
-// const [saisons, setSaisons] = React.useState(false);
-// const togSaisons = () => setSaisons(!saisons);
-
-// const [episodes, setEpisodes] = React.useState(false);
-// const togEpisodes = () => setEpisodes(!episodes);
-
-// const [suggestions, setSuggestions] = React.useState(false);
-// const togSuggestions = () => setSuggestions(!suggestions);
-/* <div className="Serie">
-<Title titleName="Titre de la série" />
-<img src="./assets/img/media.jpg" alt="Je suis une affiche du film" />
-<p>Je suis la note de la série</p>
-<ul className="navBar2">
-  <li onClick={togSynopsis}>Synopsis</li>
-  <li onClick={togSaisons}>Saisons</li>
-  <li onClick={togEpisodes}>épisodes</li>
-  <li onClick={togSuggestions}>Suggestions</li>
-  <li>Liens plateformes</li>
-</ul>
-<div className={synopsis ? 'showSyno' : 'noSyno'}>
-  <p>Date de Sortie</p>
-  <p>C`est l`histoire de...</p>
-</div>
-<p className={saisons ? 'showSaisons' : 'noSaisons'}>Saisons</p>
-<p className={episodes ? 'showEpisodes' : 'noEpisodes'}>Épisodes</p>
-<p className={suggestions ? 'showSug' : 'noSug'}>
-  <Carrousel />
-</p>
-</div> */

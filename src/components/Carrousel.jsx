@@ -42,7 +42,7 @@ const Carrousel = ({ recentMovies, setMovieId }) => {
             <div className="slider-container">
               <div className="slider">
                 <div className="slider-front">
-                  <h1>{movie.original_title}</h1>
+                  <h1>{movie.title}</h1>
                   <Link to={`/movie/${movie.id}`} key={index}>
                     <div
                       className="poster"
@@ -50,7 +50,7 @@ const Carrousel = ({ recentMovies, setMovieId }) => {
                     >
                       <img
                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                        alt={movie.original_title}
+                        alt={movie.title}
                         className="slider-img"
                       />
                     </div>
@@ -59,7 +59,7 @@ const Carrousel = ({ recentMovies, setMovieId }) => {
               </div>
               <img
                 src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-                alt={movie.original_title}
+                alt={movie.title}
                 className="slider-img-background"
               />
             </div>

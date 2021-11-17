@@ -142,6 +142,23 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+.showSimilar {
+  display: flex;
+  text-align: center;
+  overflow-y: auto;
+  margin-top: 3rem;
+  margin-left: -10.4rem;
+}
+.similar-serie-img {
+  width: 100px;
+  margin: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--lightblue-color);
+}
+.similar-serie-img:hover {
+  box-shadow: 2px 2px 5px 5px var(--lightblue-color);
+  cursor: pointer;
+}
 .serie-blue-color > span {
   color: var(--red-color);
 }
@@ -153,7 +170,7 @@
   width: 150px;
   border-radius: 10px;
 }
-.noSyno, .noSaisons, .noSug {
+.noSyno, .noSaisons, .noSimilar {
   display: none;
 }
 .serie-close-container {
@@ -256,6 +273,13 @@
     width: 220px;
     margin-bottom: 1rem;
   }
+  .showSimilar {
+    width: 91vw;
+    margin-left: -26rem;
+  }
+  .similar-serie-img {
+    width: 150px;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -297,6 +321,13 @@
     margin-top: 4rem;
     margin-left: -33.2rem;
   }
+  .showSimilar {
+    margin-top: 4rem;
+    margin-left: -33.2rem;
+  }
+  .similar-serie-img {
+    width: 220px;
+  }
   .serie-navbar img {
     width: 90px;
     height: 24px;
@@ -318,6 +349,10 @@
     padding: 0;
     font-size: 1.3rem;
   }
+  .showSimilar {
+    width: 83vw;
+  }
+
 }
 @media screen and (min-width: 1441px) {
   .serie-main-title {
@@ -357,5 +392,12 @@
   }
   .showSaisons {
     margin-left: 0;
+  }
+  .showSimilar {
+    width: 56vw;
+    margin-left: 0;
+  }
+  .similar-serie-img {
+    width: 250px;
   }
 }

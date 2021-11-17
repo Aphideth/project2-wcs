@@ -16,12 +16,16 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 3.625em;
+  height: 3em;
+  width: 100vw;
   color: var(--footer-color);
   background-color: var(--footer-bg-color);
+  bottom: 0;
 }
 
-.sources, .equipe, .contact {
+.sources,
+.equipe,
+.contact {
   border: none;
   color: var(--footer-color);
   background-color: var(--footer-bg-color);
@@ -80,7 +84,8 @@
 
 /* modal config */
 
-.ReactModal__Overlay, .ReactModal__Overlay--after-open {
+.ReactModal__Overlay,
+.ReactModal__Overlay--after-open {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -119,7 +124,8 @@
   padding: 0.5rem;
 }
 
-.form-box input, .form-box textarea {
+.form-box input,
+.form-box textarea {
   width: 59vw;
   margin: 1rem;
   padding: 0.5rem;
@@ -128,7 +134,7 @@
 
 .submitBtn {
   padding: 0.3rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   border-radius: 10px;
   color: var(--lightbeige-color);
   background-color: var(--blue-color);
@@ -152,20 +158,25 @@
   .footer {
     height: 3.8rem;
   }
-  .sources, .equipe, .contact {
-      font-size: 1.4rem;
+
+  .sources,
+  .equipe,
+  .contact {
+    font-size: 1.4rem;
   }
 }
 
 /* Large devices */
 
 @media screen and (min-width: 1441px) {
-  .form-box input, .form-box textarea {
+  .form-box input,
+  .form-box textarea {
     width: 45vw;
     margin: 1.5rem;
     padding: 0.5rem;
     border-radius: 10px;
   }
+
   .submitBtn {
     font-size: 1.3rem;
     margin-top: 1.5rem;

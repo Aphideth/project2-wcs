@@ -61,7 +61,7 @@ const Carrousel3 = ({ popularSeries, setSerieID }) => {
         icon="chevron-right"
         onClick={nextSlide}
       />
-      <Title titleName="Series : the best successes" />
+      <Title titleName="Séries : les plus gros succès" />
       <div className="slider-container-3">
         {popularSeries.map((serie, index) => (
           <div

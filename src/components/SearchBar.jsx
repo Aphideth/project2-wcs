@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
+import apiKey from '../API_KEY';
 import './SearchBar.css';
 
 library.add(faSearch, faTimes);
-const apiKey = '5727abed527bf8c8099d66876a9bf967';
 
 const SearchBar = ({ setMovieId }) => {
   const [wordEntered, setWordEntered] = useState('');
@@ -29,7 +29,6 @@ const SearchBar = ({ setMovieId }) => {
       fetchMovieRequest(e.target.value);
     }
   };
-  console.log(getMovieRequest);
   const [isActive, setIsActive] = useState(false);
   const toggleClass = () => setIsActive(!isActive);
   const clearInput = () => {
