@@ -62,6 +62,30 @@ const App = () => {
     fetchRecentSeries();
   }, []);
 
+  const [crimeMovies, setCrimeMovies] = useState([]);
+  const fetchCrimeMovies = async () => {
+    const data5 = await fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=fr-FR&region=FR&include_adult=false&include_video=false&page=1&with_genres=80&with_watch_monetization_types=flatrate`
+    );
+    const crimeMovies = await data5.json();
+    setCrimeMovies(crimeMovies.results);
+  };
+  useEffect(() => {
+    fetchCrimeMovies();
+  }, []);
+
+  const [fantastiqueMovies, setFantastiqueMovies] = useState([]);
+  const fetchFantastiqueMovies = async () => {
+    const data6 = await fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=fr-FR&region=FR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=14&with_watch_monetization_types=flatrate`
+    );
+    const fantastiqueMovies = await data6.json();
+    setFantastiqueMovies(fantastiqueMovies.results);
+  };
+  useEffect(() => {
+    fetchFantastiqueMovies();
+  }, []);
+
   const [movieId, setMovieId] = useState(0);
   const [serieId, setSerieID] = useState(0);
 
@@ -78,8 +102,8 @@ const App = () => {
           <Switch>
             <Route exact path="/">
               <Home
-                popularMovies={popularMovies}
-                recentMovies={recentMovies}
+                crimeMovies={crimeMovies}
+                fantastiqueMovies={fantastiqueMovies}
                 setMovieId={setMovieId}
               />
             </Route>
