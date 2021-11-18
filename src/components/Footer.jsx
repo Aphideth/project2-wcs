@@ -43,9 +43,17 @@ function Footer() {
           isOpen={openModal}
           shouldCloseOnOverlayClick={true}
           onRequestClose={() => setOpenModal(false)}
+          style={{
+            content: {
+              padding: 0,
+              background: 0,
+            },
+          }}
         >
           <div className="form-box">
-            <h2>Nos sources</h2>
+            <div className="form-header">
+              <h2>Nos sources</h2>
+            </div>
             <p>www.themoviedb.org/</p>
             <p>www.omdbapi.com/</p>
             <p>www.betaseries.com/api/</p>
@@ -66,9 +74,17 @@ function Footer() {
           isOpen={openModalContact}
           shouldCloseOnOverlayClick={true}
           onRequestClose={() => setOpenModalContact(false)}
+          style={{
+            content: {
+              padding: 0,
+              background: 0,
+            },
+          }}
         >
           <div className="form-box">
-            <h2>Contact</h2>
+            <div className="form-header">
+              <h2>Contact</h2>
+            </div>
             <form onSubmit={sendEmail}>
               <div className="form">
                 <label> Une demande ? </label>
