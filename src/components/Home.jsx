@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink as Link } from 'react-router-dom';
 import beer from '../assets/img/beer.png';
 import armChair from '../assets/img/armChair.png';
 import couch from '../assets/img/couch.png';
@@ -7,7 +8,7 @@ import popcorn from '../assets/img/popcorn.png';
 import soda from '../assets/img/soda.png';
 import './Home.css';
 
-const Home = ({ popularMovies, recentMovies }) => {
+const Home = ({ popularMovies, recentMovies, setMovieId }) => {
   const [armChairChecked, setArmChairChecked] = useState(false);
   const [couchChecked, setCouchChecked] = useState(false);
   const [pizzaChecked, setPizzaChecked] = useState(false);
@@ -183,27 +184,31 @@ const Home = ({ popularMovies, recentMovies }) => {
           <p>RECOMMENCER</p>
         </button>
       </div>
-      <div className="show-results">
+      <div className={showApiResult ? 'show-results' : 'hide-api'}>
         <div className={showApiResult ? 'api-result' : 'hide-api'}>
           {firstApi > secondApi
             ? popularMovies?.map((movie, index) => (
                 <div className="movie-dispatch" key={index}>
-                  <h1 className="test-title-api">{movie.original_title}</h1>
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                    alt={movie.original_title}
-                    className="test-img-api"
-                  />
+                  <Link to={`/movie/${movie.id}`} key={index}>
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                      alt={movie.original_title}
+                      className="movie-img-api"
+                      onClick={() => setMovieId(movie.id)}
+                    />
+                  </Link>
                 </div>
               ))
             : recentMovies?.map((movie, index) => (
                 <div className="movie-dispatch" key={index}>
-                  <h1 className="test-title-api">{movie.original_title}</h1>
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                    alt={movie.original_title}
-                    className="test-img-api"
-                  />
+                  <Link to={`/movie/${movie.id}`} key={index}>
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                      alt={movie.original_title}
+                      className="movie-img-api"
+                      onClick={() => setMovieId(movie.id)}
+                    />
+                  </Link>
                 </div>
               ))}
         </div>

@@ -77,7 +77,11 @@ const App = () => {
         <main>
           <Switch>
             <Route exact path="/">
-              <Home popularMovies={popularMovies} recentMovies={recentMovies} />
+              <Home
+                popularMovies={popularMovies}
+                recentMovies={recentMovies}
+                setMovieId={setMovieId}
+              />
             </Route>
             <Route path="/Movies">
               <Movies
