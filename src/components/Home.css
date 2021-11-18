@@ -1,117 +1,178 @@
-body {
-  background-color: var(--beige-color);
-}
-
 .Home {
-  height: 850px;
-  background-image: url('../assets/img/cinema.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.questionnaire {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 8.5em;
-  margin-bottom: 2rem;
-}
-
-.colonne1 {
-  display: flex;
-  flex-direction: column;
-  width: 250px;
-  margin: 2rem;
-  padding: 2rem;
-}
-
-.colonne1 img {
-  width: 100px;
   padding: 1rem;
 }
-
-.colonne2 {
-  display: flex;
-  flex-direction: column;
-  width: 250px;
-  margin: 2rem;
-  padding: 2rem;
-}
-
-.colonne2 img {
-  width: 100px;
-  padding: 1rem;
-}
-
-.colonne3 {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem;
-  padding: 2rem;
-}
-
-.colonne3 img {
-  width: 100px;
-  padding: 2rem;
-}
-
-.clic-to-show {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-.show-result,
-.show-retry {
-  display: flex;
-  text-align: center;
+.home-title{
+  border: 1px solid var(--lightblue-color);
+  box-shadow: 2px 2px 7px 1px var(--lightblue-color);
   border-radius: 10px;
 }
-
-.hide-result,
-.hide-retry {
-  display: none;
+.Home h2 {
   text-align: center;
+  color: var(--beige-color);
 }
-
-.api-result {
+.Home h3 {
+  text-align: center;
+  color: var(--beige-color);
+}
+.questionnaire-show img {
+  width: 100px;
+  padding: 1rem;
+  cursor: pointer;
+}
+.isChecked {
+  margin: 2rem;
+  border: 1px solid var(--lightblue-color);
+  box-shadow: 2px 2px 7px 1px var(--lightblue-color);
+  border-radius: 50%
+}
+.notChecked {
+  margin: 2rem;
+  border: none;
+}
+.questionnaire-show {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 950px;
-  height: 400px;
-  margin-left: 28%;
-  overflow-x: auto;
+  border: 1px solid var(--lightblue-color);
+  box-shadow: 2px 2px 7px 1px var(--lightblue-color);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
 }
-
-.hide-api {
+.questionnaire-hide {
   display: none;
 }
-
-.movie-dispatch {
-  width: 120px;
-}
-
-.test-title-api {
+.questionnaire-container {
   display: flex;
+}
+.clic-to-show {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 45px;
-  font-size: 0.8rem;
+  text-align: center;
 }
-
-.test-img-api {
-  width: 100px;
+.show-button {
+  margin: 1rem;
+  border: 1px solid var(--lightblue-color);
+  box-shadow: 2px 2px 7px 1px var(--lightblue-color);
+  border-radius: 8px;
+  color: var(--lightblue-color);
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
 }
-
-.isChecked {
-  border: 2px solid white;
-  border-radius: 50%;
+.hide-button {
+  display: none;
 }
-
-.notChecked {
+.show-results {
+  display: flex;
+  flex-wrap: wrap;
+  height: 80vh;
+  background-image: url(../assets/img/cinema2.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  border: ridge 5px black;
+  box-shadow: 2px 2px 7px 7px var(--lightblue-color);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.api-result {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-height: 420px;
+  margin-top: 1rem;
+  overflow-y: scroll;
+}
+.hide-api {
+  display: none;
   border: none;
+  background-image: none;
+}
+.movie-dispatch {
+  width: 110px;
+}
+.movie-title-api {
+  display: none;
+}
+.movie-img-api {
+  width: 100px;
+  padding: 0rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 426px) {
+  .Home img {
+    width: 150px;
+  }
+  .questionnaire-show {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid var(--lightblue-color);
+    box-shadow: 2px 2px 7px 1px var(--lightblue-color);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .colonne1 {
+    padding: 1rem;
+  }
+  .colonne2 {
+    padding: 1rem;
+  }
+  .Home h2 {
+    width: 100%;
+  }
+  .Home h3 {
+    width: 100%;
+  }
+  .home-title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .show-button {
+    font-size: 1.2rem;
+  }
+  .show-results {
+    background-image: url(../assets/img/cinema3.png);
+  }
+  .api-result {
+    max-height: 430px;
+  }
+  .movie-dispatch {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .questionnaire-container {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .show-results {
+    height: 88vh;
+    background-size: contain;
+  }
+  .api-result {
+    width: 90vw;
+    max-height: 475px;
+  }
+  .movie-dispatch {
+    width: 170px;
+    padding-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .show-results {
+    height: 89vh;
+    background-size: contain;
+  }
+  .api-result {
+    width: 89vw;
+    max-height: 500px;
+    overflow: hidden;
+  }
+  .movie-dispatch {
+    width: 160px;
+    padding-bottom: 1rem;
+  }
 }

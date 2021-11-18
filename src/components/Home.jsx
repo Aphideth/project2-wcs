@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import { NavLink as Link } from 'react-router-dom';
 import beer from '../assets/img/beer.png';
-import fauteuil from '../assets/img/fauteuil.png';
+import armChair from '../assets/img/armChair.png';
 import couch from '../assets/img/couch.png';
 import pizza from '../assets/img/pizza.png';
 import popcorn from '../assets/img/popcorn.png';
 import soda from '../assets/img/soda.png';
 import './Home.css';
 
-const Home = ({ popularMovies, recentMovies }) => {
+const Home = ({ popularMovies, recentMovies, setMovieId }) => {
   const [armChairChecked, setArmChairChecked] = useState(false);
   const [couchChecked, setCouchChecked] = useState(false);
   const [pizzaChecked, setPizzaChecked] = useState(false);
@@ -61,14 +62,34 @@ const Home = ({ popularMovies, recentMovies }) => {
   }
 
   const [showApiResult, setShowApiResult] = useState(false);
+
+  let disabled;
+  if (firstApi + secondApi < 3) {
+    disabled = true;
+  }
   const handleShowApiResult = () => {
     setShowApiResult(!showApiResult);
+    setCouchChecked(false);
+    setArmChairChecked(false);
+    setPizzaChecked(false); 
+    setPopcornChecked(false);
+    setBeerChecked(false);
+    setSodaChecked(false);
   };
-
   return (
     <div className="Home">
-      <div className="questionnaire">
-        <div className={showApiResult ? 'hide-api' : 'api-result'}>
+      <div
+        className={showApiResult ? 'questionnaire-hide' : 'questionnaire-show'}
+      >
+        <div className="home-title">
+          <h2>Veuillez faire votre choix :</h2>
+          <h3>{`Sélectionnez une image par ligne`}</h3>
+          <h3>
+            Cliquez que le bouton pour afficher votre recommandation de films
+            personnalisés
+          </h3>
+        </div>
+        <div className="questionnaire-container">
           <div className="colonne1">
             <div>
               <label>
@@ -115,10 +136,10 @@ const Home = ({ popularMovies, recentMovies }) => {
               <label>
                 <div className={armChairChecked ? 'isChecked' : 'notChecked'}>
                   <img
-                    src={fauteuil}
-                    alt="fauteuil"
+                    src={armChair}
+                    alt="armChair"
                     type="checkbox"
-                    couchChecked={armChairChecked}
+                    armChairChecked={armChairChecked}
                     onClick={handleChangeArmChair}
                   />
                 </div>
@@ -131,7 +152,7 @@ const Home = ({ popularMovies, recentMovies }) => {
                     src={popcorn}
                     alt="popcorn"
                     type="checkbox"
-                    couchChecked={popcornChecked}
+                    popcornChecked={popcornChecked}
                     onClick={handleChangePopcorn}
                   />
                 </div>
@@ -144,7 +165,7 @@ const Home = ({ popularMovies, recentMovies }) => {
                     src={soda}
                     alt="soda"
                     type="checkbox"
-                    couchChecked={sodaChecked}
+                    sodaChecked={sodaChecked}
                     onClick={handleChangeSoda}
                   />
                 </div>
@@ -155,40 +176,47 @@ const Home = ({ popularMovies, recentMovies }) => {
       </div>
       <div className="clic-to-show">
         <button
-          className={showApiResult ? 'hide-result' : 'show-result'}
+          className={showApiResult ? 'hide-button' : 'show-button'}
           onClick={handleShowApiResult}
+          disabled={disabled}
         >
-          <p>Show your result</p>
+          <p>RESULTAT</p>
         </button>
         <button
-          className={showApiResult ? 'show-retry' : 'hide-retry'}
+          className={showApiResult ? 'show-button' : 'hide-button'}
           onClick={handleShowApiResult}
-        >
-          <p> Retry</p>
+    >
+          <p>RECOMMENCER</p>
         </button>
       </div>
-      <div className={showApiResult ? 'api-result' : 'hide-api'}>
-        {firstApi > secondApi
-          ? popularMovies?.map((movie, index) => (
-              <div className="movie-dispatch" key={index}>
-                <h1 className="test-title-api">{movie.original_title}</h1>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                  alt={movie.original_title}
-                  className="test-img-api"
-                />
-              </div>
-            ))
-          : recentMovies?.map((movie, index) => (
-              <div className="movie-dispatch" key={index}>
-                <h1 className="test-title-api">{movie.original_title}</h1>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                  alt={movie.original_title}
-                  className="test-img-api"
-                />
-              </div>
-            ))}
+      <div className={showApiResult ? 'show-results' : 'hide-api'}>
+        <div className={showApiResult ? 'api-result' : 'hide-api'}>
+          {firstApi > secondApi
+            ? popularMovies?.map((movie, index) => (
+                <div className="movie-dispatch" key={index}>
+                  <Link to={`/movie/${movie.id}`} key={index}>
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                      alt={movie.original_title}
+                      className="movie-img-api"
+                      onClick={() => setMovieId(movie.id)}
+                    />
+                  </Link>
+                </div>
+              ))
+            : recentMovies?.map((movie, index) => (
+                <div className="movie-dispatch" key={index}>
+                  <Link to={`/movie/${movie.id}`} key={index}>
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                      alt={movie.original_title}
+                      className="movie-img-api"
+                      onClick={() => setMovieId(movie.id)}
+                    />
+                  </Link>
+                </div>
+              ))}
+        </div>
       </div>
     </div>
   );
