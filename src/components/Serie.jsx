@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import moment from 'moment';
 import apiKey from '../API_KEY';
 import './Serie.css';
 
-const Serie = (serieId) => {
+const Serie = () => {
   const [serieDetail, setSerieDetail] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
   const [serieList, setSerieList] = useState([]);
+  const { id } = useParams();
+  console.log(id)
 
   const fetchDetailSerie = async () => {
-    const url = `https://api.themoviedb.org/3/tv/${serieId.serieId}?api_key=${apiKey}&language=fr-FR`;
+    const url = `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=fr-FR`;
     const response = await fetch(url);
     const searchSerie = await response.json();
     if (searchSerie) {
@@ -19,13 +21,13 @@ const Serie = (serieId) => {
     }
   };
   useEffect(() => {
-    fetchDetailSerie(serieId.serieId);
-  }, [serieId.serieId]);
+    fetchDetailSerie(id);
+  }, [id]);
 
   const [similarSerie, setSimilarSerie] = useState([]);
 
   const fetchSimilarSerie = async () => {
-    const datas = `https://api.themoviedb.org/3/tv/${serieId.serieId}/similar?api_key=${apiKey}&language=en-US&page=1`;
+    const datas = `https://api.themoviedb.org/3/tv/${id}/similar?api_key=${apiKey}&language=en-US&page=1`;
     const responseSimilar = await fetch(datas);
     const similarResult = await responseSimilar.json();
     if (similarResult.results) {
@@ -59,24 +61,24 @@ const Serie = (serieId) => {
       : localStorage.setItem('serielist', JSON.stringify([]));
   };
 
-  const addToSerieList = (serieId) => {
+  const addToSerieList = (id) => {
     const favoriteSerieList = localStorage.getItem('serielist');
     const newfavoriteSerieList = favoriteSerieList
       ? JSON.parse(favoriteSerieList)
       : [];
-    if (!newfavoriteSerieList.includes(serieId)) {
-      newfavoriteSerieList.push(serieId);
+    if (!newfavoriteSerieList.includes(id)) {
+      newfavoriteSerieList.push(id);
     }
     localStorage.setItem('serielist', JSON.stringify(newfavoriteSerieList));
     getFavSeries();
   };
 
-  const deleteFromSerieList = (serieId) => {
+  const deleteFromSerieList = (id) => {
     const favoriteSerieList = localStorage.getItem('serielist');
     const newfavoriteSerieList = favoriteSerieList
       ? JSON.parse(favoriteSerieList)
       : [];
-    const newSerieList = newfavoriteSerieList.filter((id) => id !== serieId);
+    const newSerieList = newfavoriteSerieList.filter((serieId) => serieId !== id);
     localStorage.setItem('serielist', JSON.stringify(newSerieList));
     getFavSeries();
   };
@@ -105,15 +107,15 @@ const Serie = (serieId) => {
             ))}
           </div>
           <div className="serie-favorite" onClick={handleClickFavorite}>
-            {serieList.includes(serieId.serieId) ? (
+            {serieList.includes(id) ? (
               <div
                 className="serie-isFavorite"
-                onClick={() => deleteFromSerieList(serieId.serieId)}
+                onClick={() => deleteFromSerieList(id)}
               />
             ) : (
               <div
                 className="serie-notFavorite"
-                onClick={() => addToSerieList(serieId.serieId)}
+                onClick={() => addToSerieList(id)}
               />
             )}
           </div>
@@ -200,13 +202,11 @@ const Serie = (serieId) => {
               {similarSerie?.map((similar, index) => (
                 <div key={index}>
                   <Link to={`/serie/${similar.id}`}>
-                    <div onClick={() => serieId}>
                       <img
                         src={`https://image.tmdb.org/t/p/w500/${similar.poster_path}`}
                         alt={similar.name}
                         className="similar-serie-img"
                       />
-                    </div>
                   </Link>
                 </div>
               ))}
