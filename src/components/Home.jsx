@@ -69,9 +69,12 @@ const Home = ({ popularMovies, recentMovies, setMovieId }) => {
   }
   const handleShowApiResult = () => {
     setShowApiResult(!showApiResult);
+  };
+  const handleShowApiReset = () => {
+    setShowApiResult(!showApiResult);
     setCouchChecked(false);
     setArmChairChecked(false);
-    setPizzaChecked(false); 
+    setPizzaChecked(false);
     setPopcornChecked(false);
     setBeerChecked(false);
     setSodaChecked(false);
@@ -184,8 +187,8 @@ const Home = ({ popularMovies, recentMovies, setMovieId }) => {
         </button>
         <button
           className={showApiResult ? 'show-button' : 'hide-button'}
-          onClick={handleShowApiResult}
-    >
+          onClick={handleShowApiReset}
+        >
           <p>RECOMMENCER</p>
         </button>
       </div>
