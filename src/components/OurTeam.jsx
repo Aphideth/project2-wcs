@@ -110,8 +110,9 @@ const OurTeam = () => {
             shouldCloseOnOverlayClick
             onRequestClose={() => setOpenModal1(false)}
             style={{
-              overlay: {
-                backgroundColor: 'black',
+              overlay: {},
+              content: {
+                padding: 0,
               },
             }}
           >
@@ -154,8 +155,8 @@ const OurTeam = () => {
             shouldCloseOnOverlayClick
             onRequestClose={() => setOpenModal2(false)}
             style={{
-              overlay: {
-                backgroundColor: 'black',
+              content: {
+                padding: 0,
               },
             }}
           >
@@ -198,8 +199,8 @@ const OurTeam = () => {
             shouldCloseOnOverlayClick
             onRequestClose={() => setOpenModal3(false)}
             style={{
-              overlay: {
-                backgroundColor: 'black',
+              content: {
+                padding: 0,
               },
             }}
           >
@@ -242,8 +243,8 @@ const OurTeam = () => {
             shouldCloseOnOverlayClick
             onRequestClose={() => setOpenModal4(false)}
             style={{
-              overlay: {
-                backgroundColor: 'black',
+              content: {
+                padding: 0,
               },
             }}
           >
