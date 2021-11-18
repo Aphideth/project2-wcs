@@ -141,6 +141,7 @@
   width: 100px;
   align-content: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 /* Medium devices */

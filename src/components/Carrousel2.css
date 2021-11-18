@@ -5,6 +5,17 @@
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
+  border: 1px solid var(--lightblue-color);
+  box-shadow: 2px 2px 7px 7px var(--lightblue-color);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7)
+}
+
+.title {
+  width: 100vw;
+  border: 1px solid var(--lightblue-color);
+  box-shadow: 2px 2px 7px 7px var(--lightblue-color);
+  border-radius: 10px;
 }
 
 .slider-2 {
@@ -43,6 +54,7 @@
   right: 10px;
   font-size: 2rem;
   color: var(--beige-color);
+  text-shadow: 2px 2px 7px 1px var(--lightblue-color);
   z-index: 3;
   cursor: pointer;
   user-select: none;
@@ -73,6 +85,9 @@
   .title {
     font-size: 1.5rem;
     width: 100vw;
+    border: 1px solid var(--lightblue-color);
+    box-shadow: 2px 2px 7px 7px var(--lightblue-color);
+    border-radius: 10px;
   }
   .slider-2 h1 {
     width: 212px;
@@ -120,7 +135,6 @@
 
 @media screen and (min-width: 1025px) {
   .title {
-    margin-top: 3.5rem;
     font-size: 2rem;
   }
   .slider-2 h1 {

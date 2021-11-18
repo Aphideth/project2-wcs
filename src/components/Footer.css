@@ -44,6 +44,12 @@
   color: var(--footer-color);
 }
 
+.form-box a {
+  text-decoration: none;
+  color: var(--footer-color);
+  padding-top: 3rem;
+}
+
 .footer-nav {
   display: flex;
   align-items: center;
@@ -123,6 +129,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 2rem;
 }
 
 .form-box h2 {
@@ -135,7 +142,6 @@
 
 .form-box input,
 .form-box textarea {
-  width: 59vw;
   margin: 1rem;
   padding: 0.5rem;
   border-radius: 10px;
@@ -167,7 +173,10 @@
   .footer {
     height: 3.8rem;
   }
-
+  .form-box input,
+  .form-box textarea {
+    width: 59vw;
+  }
   .sources,
   .equipe,
   .contact {

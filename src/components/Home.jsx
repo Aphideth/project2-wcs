@@ -8,7 +8,7 @@ import popcorn from '../assets/img/popcorn.png';
 import soda from '../assets/img/soda.png';
 import './Home.css';
 
-const Home = ({ popularMovies, recentMovies, setMovieId }) => {
+const Home = ({ crimeMovies, fantastiqueMovies, setMovieId }) => {
   const [armChairChecked, setArmChairChecked] = useState(false);
   const [couchChecked, setCouchChecked] = useState(false);
   const [pizzaChecked, setPizzaChecked] = useState(false);
@@ -195,7 +195,7 @@ const Home = ({ popularMovies, recentMovies, setMovieId }) => {
       <div className={showApiResult ? 'show-results' : 'hide-api'}>
         <div className={showApiResult ? 'api-result' : 'hide-api'}>
           {firstApi > secondApi
-            ? popularMovies?.map((movie, index) => (
+            ? crimeMovies?.map((movie, index) => (
                 <div className="movie-dispatch" key={index}>
                   <Link to={`/movie/${movie.id}`} key={index}>
                     <img
@@ -207,7 +207,7 @@ const Home = ({ popularMovies, recentMovies, setMovieId }) => {
                   </Link>
                 </div>
               ))
-            : recentMovies?.map((movie, index) => (
+            : fantastiqueMovies?.map((movie, index) => (
                 <div className="movie-dispatch" key={index}>
                   <Link to={`/movie/${movie.id}`} key={index}>
                     <img

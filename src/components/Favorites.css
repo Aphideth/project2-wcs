@@ -46,7 +46,7 @@
   border: 1px solid var(--lightblue-color);
   box-shadow: 2px 2px 7px 1px var(--lightblue-color);
   border-radius: 10px;
-  background-color: rgba(17, 6, 6, 0.7)
+  background-color: rgba(0, 0, 0, 0.7)
 }
 .favorite-movie-card, .favorite-serie-card {
   display: flex;
