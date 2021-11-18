@@ -69,6 +69,12 @@ const Home = ({ popularMovies, recentMovies, setMovieId }) => {
   }
   const handleShowApiResult = () => {
     setShowApiResult(!showApiResult);
+    setCouchChecked(false);
+    setArmChairChecked(false);
+    setPizzaChecked(false); 
+    setPopcornChecked(false);
+    setBeerChecked(false);
+    setSodaChecked(false);
   };
   return (
     <div className="Home">
@@ -133,7 +139,7 @@ const Home = ({ popularMovies, recentMovies, setMovieId }) => {
                     src={armChair}
                     alt="armChair"
                     type="checkbox"
-                    couchChecked={armChairChecked}
+                    armChairChecked={armChairChecked}
                     onClick={handleChangeArmChair}
                   />
                 </div>
@@ -146,7 +152,7 @@ const Home = ({ popularMovies, recentMovies, setMovieId }) => {
                     src={popcorn}
                     alt="popcorn"
                     type="checkbox"
-                    couchChecked={popcornChecked}
+                    popcornChecked={popcornChecked}
                     onClick={handleChangePopcorn}
                   />
                 </div>
@@ -159,7 +165,7 @@ const Home = ({ popularMovies, recentMovies, setMovieId }) => {
                     src={soda}
                     alt="soda"
                     type="checkbox"
-                    couchChecked={sodaChecked}
+                    sodaChecked={sodaChecked}
                     onClick={handleChangeSoda}
                   />
                 </div>
@@ -176,11 +182,10 @@ const Home = ({ popularMovies, recentMovies, setMovieId }) => {
         >
           <p>RESULTAT</p>
         </button>
-
         <button
           className={showApiResult ? 'show-button' : 'hide-button'}
           onClick={handleShowApiResult}
-        >
+    >
           <p>RECOMMENCER</p>
         </button>
       </div>
