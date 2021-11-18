@@ -54,9 +54,23 @@ function Footer() {
             <div className="form-header">
               <h2>Nos sources</h2>
             </div>
-            <p>www.themoviedb.org/</p>
-            <p>www.omdbapi.com/</p>
-            <p>www.betaseries.com/api/</p>
+            <a
+              href="http://www.themoviedb.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              www.themoviedb.org/
+            </a>
+            <a href="http://www.omdbapi.com/" target="_blank" rel="noreferrer">
+              www.omdbapi.com/
+            </a>
+            <a
+              href="http://www.betaseries.com/api/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              www.betaseries.com/api/
+            </a>
           </div>
           <div>
             <button className="closeBtn" onClick={() => setOpenModal(false)}>
@@ -89,7 +103,7 @@ function Footer() {
               <div className="form">
                 <label> Une demande ? </label>
                 <label> Une suggestion ? </label>
-                <label> Vous pouvez nous contacter ici !</label>
+                <label> Vous pouvez nous contacter ici :</label>
                 <input
                   type="text"
                   required="required"
