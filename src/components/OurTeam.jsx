@@ -38,7 +38,7 @@ const OurTeam = () => {
     {
       name: 'Aphideth',
       avatar: aphideth,
-      presentation: `La première règle du Plop Club est : il est interdit de parler du Plop Club.`,
+      presentation: `"La première règle du Plop Club est : il est interdit de parler du Plop Club."`,
       top1film: pulpfiction,
       top2film: chihiro,
       top3film: xmen,
@@ -52,7 +52,7 @@ const OurTeam = () => {
     {
       name: 'Mathilde',
       avatar: mathilde,
-      presentation: 'Que le Plop soit avec toi.',
+      presentation: '"Que le Plop soit avec toi."',
       top1film: aboutTime,
       top2film: tracks,
       top3film: kuzco,
@@ -66,7 +66,7 @@ const OurTeam = () => {
     {
       name: 'Kévin',
       avatar: kevin,
-      presentation: `Le temps est sans importance, seul le 'Plop' est important.`,
+      presentation: `"Le temps est sans importance, seul le 'Plop' est important."`,
       top1film: element,
       top2film: leon,
       top3film: bigFish,
@@ -80,7 +80,7 @@ const OurTeam = () => {
     {
       name: 'Giovanni',
       avatar: giovanni,
-      presentation: 'Plop',
+      presentation: `"Je mets les plop où je veux Little John, et c'est souvent dans la div."`,
       top1film: element,
       top2film: matrix,
       top3film: shutterisland,

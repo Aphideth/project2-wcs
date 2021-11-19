@@ -88,8 +88,8 @@ const Home = ({ crimeMovies, fantastiqueMovies, setMovieId }) => {
           <h2>Veuillez faire votre choix :</h2>
           <h3>{`Sélectionnez une image par ligne`}</h3>
           <h3>
-            Cliquez que le bouton pour afficher votre recommandation de films
-            personnalisés
+            Cliquez sur le bouton pour afficher votre recommandation
+            personnalisé de films
           </h3>
         </div>
         <div className="questionnaire-container">

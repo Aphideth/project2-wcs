@@ -50,8 +50,6 @@ const Serie = (serieId) => {
   const [suggestions, setSuggestions] = React.useState(false);
   const togSuggestions = () => setSuggestions(!suggestions);
 
-  //On teste les favoris ci-dessous
-
   const getFavSeries = () => {
     const favoriteSerieList = localStorage.getItem('serielist');
     favoriteSerieList

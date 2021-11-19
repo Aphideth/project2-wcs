@@ -12,8 +12,6 @@ const Favorites = ({ setSerieID, setMovieId }) => {
     getFavSeries();
   }, []);
 
-  //favMovie
-
   const getFavorites = () => {
     const favoriteList = localStorage.getItem('wishlist');
     favoriteList && favoriteList.length > 0
@@ -42,8 +40,6 @@ const Favorites = ({ setSerieID, setMovieId }) => {
     localStorage.setItem('wishlist', JSON.stringify(newList));
     setFavMovie(favMovie.filter((movie) => movie.id !== movieId));
   };
-
-  //favSerie
 
   const getFavSeries = () => {
     const favoriteSerieList = localStorage.getItem('serielist');

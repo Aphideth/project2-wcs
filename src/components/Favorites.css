@@ -33,6 +33,7 @@
   background: var(--red-color);
   color: antiquewhite;
   z-index: 1;
+  cursor: pointer;
 }
 .favorites p {
   color: var(--beige-color);
