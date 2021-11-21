@@ -64,11 +64,12 @@ const Favorites = ({ setSerieID, setMovieId }) => {
   };
 
   const deleteFromSerieList = (serieId) => {
+    const newId = `${serieId}`;
     const favoriteSerieList = localStorage.getItem('serielist');
     const newfavoriteSerieList = favoriteSerieList
       ? JSON.parse(favoriteSerieList)
       : [];
-    const newSerieList = newfavoriteSerieList.filter((id) => id !== serieId);
+    const newSerieList = newfavoriteSerieList.filter((id) => id !== newId);
     localStorage.setItem('serielist', JSON.stringify(newSerieList));
     setFavSerie(favSerie.filter((serie) => serie.id !== serieId));
     console.log(favSerie);

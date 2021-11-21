@@ -10,7 +10,7 @@ const Serie = () => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [serieList, setSerieList] = useState([]);
   const { id } = useParams();
-  console.log(id)
+  console.log(id);
 
   const fetchDetailSerie = async () => {
     const url = `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=fr-FR`;
@@ -76,7 +76,9 @@ const Serie = () => {
     const newfavoriteSerieList = favoriteSerieList
       ? JSON.parse(favoriteSerieList)
       : [];
-    const newSerieList = newfavoriteSerieList.filter((serieId) => serieId !== id);
+    const newSerieList = newfavoriteSerieList.filter(
+      (serieId) => serieId !== id
+    );
     localStorage.setItem('serielist', JSON.stringify(newSerieList));
     getFavSeries();
   };
@@ -200,11 +202,11 @@ const Serie = () => {
               {similarSerie?.map((similar, index) => (
                 <div key={index}>
                   <Link to={`/serie/${similar.id}`}>
-                      <img
-                        src={`https://image.tmdb.org/t/p/w500/${similar.poster_path}`}
-                        alt={similar.name}
-                        className="similar-serie-img"
-                      />
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500/${similar.poster_path}`}
+                      alt={similar.name}
+                      className="similar-serie-img"
+                    />
                   </Link>
                 </div>
               ))}
